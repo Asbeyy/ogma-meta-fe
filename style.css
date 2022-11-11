@@ -25,8 +25,8 @@ svg{
 :root{
   /* Light Theme Variables */
   --color-text-light: #333332;
-  --color-background-light: #FAF4E5;
-  --color-pink-light: #FFE7BF; 
+  --color-background-light: #f0f0f0;
+  --color-pink-light: #b1adf762; 
   --color-green-light: #7AD0AC;
   --color-blue-light: #8395CD;
 
@@ -415,6 +415,20 @@ svg{
   color: var(--color-text);
 }
 
+.hero-motion{
+  position: absolute;
+  bottom: -1250px;
+  left: calc(50% - 115px);
+  scale: 6.7;
+  color: var(--color-text);
+  padding: 0px 0px;
+}
+
+.hero-motion-description{
+  font-size: 18px;
+  color: var(--color-text);
+  text-align: center;
+}
 
 /* Other colors override */
 
@@ -471,5 +485,15 @@ svg{
   .hero-second-subheading{
     font-size: 18px;
   }
+  .hero-motion{
+    position: absolute;
+    bottom: -1250px;
+    left: calc(50% - 55px);
+    scale: 3.75;
+    color: var(--color-text);
+  }
 }
+
+
+
 

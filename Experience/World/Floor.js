@@ -23,9 +23,12 @@ export default class Floor {
         this.plane.receiveShadow = true;
     }
 
+
+    //colori cerchi giganti
+
     setCircles() {
         const geometry = new THREE.CircleGeometry(5, 64);
-        const material = new THREE.MeshStandardMaterial({ color: 0xe5a1aa });
+        const material = new THREE.MeshStandardMaterial({ color: 0xb3dffb });
         const material2 = new THREE.MeshStandardMaterial({ color: 0x8395cd });
         const material3 = new THREE.MeshStandardMaterial({ color: 0x7ad0ac });
 
