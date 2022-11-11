@@ -458,6 +458,17 @@ export default class Preloader extends EventEmitter {
                     },
                     ">-0.1"
                 )
+                .to(
+                    this.roomChildren.logo3d.scale,
+                    {
+                        x: 150,
+                        y: 10,
+                        z: 150,
+                        ease: "back.out(2.2)",
+                        duration: 0.5,
+                    },
+                    ">-0.1"
+                )
                 .to(this.roomChildren.computer.scale, {
                     x: 1,
                     y: 1,
