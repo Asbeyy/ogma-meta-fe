@@ -112,13 +112,17 @@ export default class Room {
         this.swim.play();
     }
 
+    //mouse rotation
+
     onMouseMove() {
         window.addEventListener("mousemove", (e) => {
             this.rotation =
-                ((e.clientX - window.innerWidth / 2) * 2) / window.innerWidth;
-            this.lerp.target = this.rotation * 0.05;
+                ((e.clientX - window.innerWidth / 2) * 8) / window.innerWidth; //*2 standard
+            this.lerp.target = this.rotation * 0.15; //*0.05 standard
         });
     }
+
+    
 
     resize() {}
 

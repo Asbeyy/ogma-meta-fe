@@ -25,7 +25,7 @@ svg{
 :root{
   /* Light Theme Variables */
   --color-text-light: #333332;
-  --color-background-light: #f0f0f0;
+  --color-background-light: #ffffff;
   --color-pink-light: #b1adf762; 
   --color-green-light: #7AD0AC;
   --color-blue-light: #8395CD;
@@ -239,7 +239,7 @@ svg{
 .section{
   position: relative;
   width: 50%;
-  padding: 1000px 4%;
+  padding: 0px 4%;
   margin: 0;
   background-color: var(--color-background);
   overflow: hidden;
@@ -299,7 +299,7 @@ svg{
 
 .section-detail-wrapper{
   position: relative;
-  padding: 20% 5%;
+  padding: 10% 0%;
 }
 
 .section-heading{

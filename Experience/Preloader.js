@@ -66,9 +66,9 @@ export default class Preloader extends EventEmitter {
             } else {
                 this.timeline
                     .to(this.roomChildren.cube.scale, {
-                        x: 1.4,
-                        y: 1.4,
-                        z: 1.4,
+                        x: 3.4,
+                        y: 3.4,
+                        z: 3.4,
                         ease: "back.out(2.5)",
                         duration: 0.7,
                     })
@@ -110,9 +110,9 @@ export default class Preloader extends EventEmitter {
                 .to(
                     ".intro-text .animatedis",
                     {
-                        yPercent: 100,
-                        stagger: 0.05,
-                        ease: "back.in(1.7)",
+                        yPercent: -100,
+                        stagger: 0.02,
+                        ease: "back.in(0.0)",
                     },
                     "fadeout"
                 )
@@ -186,7 +186,18 @@ export default class Preloader extends EventEmitter {
                         x: 1,
                         y: 1,
                         z: 1,
-                        ease: "back.out(2.2)",
+                        ease: "back.out(0.6)",
+                        duration: 0.5,
+                    },
+                    ">-0.5"
+                )
+                .to(
+                    this.roomChildren.yacht2.scale,
+                    {
+                        x: 1,
+                        y: 1,
+                        z: 1,
+                        ease: "back.out(0.6)",
                         duration: 0.5,
                     },
                     ">-0.5"
@@ -459,13 +470,24 @@ export default class Preloader extends EventEmitter {
                     ">-0.1"
                 )
                 .to(
-                    this.roomChildren.table_stuff.scale,
+                    this.roomChildren.tablecita.scale,
                     {
                         x: 1,
                         y: 1,
                         z: 1,
                         ease: "back.out(2.2)",
                         duration: 0.5,
+                    },
+                    ">-0.1"
+                )
+                .to(
+                    this.roomChildren.table_stuff.scale,
+                    {
+                        x: 1,
+                        y: 1,
+                        z: 1,
+                        ease: "back.out(0.2)",
+                        duration: 0.4,
                     },
                     ">-0.1"
                 )
@@ -519,7 +541,7 @@ export default class Preloader extends EventEmitter {
                     {
                         y: 4 * Math.PI + Math.PI / 4,
                         ease: "power2.out",
-                        duration: 1,
+                        duration: 0.7,
                     },
                     "chair"
                 )
