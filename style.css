@@ -25,7 +25,8 @@ svg{
 :root{
   /* Light Theme Variables */
   --color-text-light: #333332;
-  --color-background-light: #ffffff;
+  --color-button-light: #ffffff; 
+  --color-background-light: #eae8e0;
   --color-pink-light: #b1adf762; 
   --color-green-light: #7AD0AC;
   --color-blue-light: #8395CD;
@@ -33,6 +34,7 @@ svg{
   /* Dark Theme Variables */
   --color-text-dark: #FAF4E5;
   --color-background-dark: #8395CD;
+  --color-button-dark: #000000;
 }
 
 .light-theme{
@@ -41,6 +43,7 @@ svg{
   --color-pink: var(--color-pink-light);
   --color-green: var(--color-green-light);
   --color-blue: var(--color-blue-light);
+  --color-button: var(--color-button-light)
 }
 
 .dark-theme{
@@ -49,6 +52,7 @@ svg{
   --color-pink: var(--color-text-dark);
   --color-green: var(--color-text-dark);
   --color-blue: var(--color-text-dark);
+  --color-button: var(--color-button-dark)
 }
 
 /* Experience --------------------------------------------- */
@@ -230,6 +234,78 @@ svg{
   left: 31px;
 }
 
+.accept-button{
+  height: 200px;
+  width: 100%;
+  position: relative;
+  top: calc(50% - 100px );
+  text-align: center;
+  background-color: var(--color-background);
+  display: block;
+  border-radius: 50px;
+}
+
+.bottone{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border-radius: 50px;
+  border-width: 0px;
+  background-color: var(--color-bac);
+  color: var(--color-text);
+  font-size: 87px;
+  font-family: "Montserrat", sans-serif;
+  
+}
+
+.bottone:hover {
+  scale: 0.9;
+  -webkit-animation-name: wiggle;
+  -ms-animation-name: wiggle;
+  -ms-animation-duration: 1000ms;
+  -webkit-animation-duration: 1000ms;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes wiggle {
+  0% {-webkit-transform: rotate(10deg);}
+  25% {-webkit-transform: rotate(-10deg);}
+  50% {-webkit-transform: rotate(20deg);}
+  75% {-webkit-transform: rotate(-5deg);}
+  100% {-webkit-transform: rotate(0deg);}
+}
+
+@-ms-keyframes wiggle {
+  0% {-ms-transform: rotate(1deg);}
+  25% {-ms-transform: rotate(-1deg);}
+  50% {-ms-transform: rotate(1.5deg);}
+  75% {-ms-transform: rotate(-5deg);}
+  100% {-ms-transform: rotate(0deg);}
+}
+
+@keyframes wiggle {
+  0% {transform: rotate(10deg);}
+  25% {transform: rotate(-10deg);}
+  50% {transform: rotate(20deg);}
+  75% {transform: rotate(-5deg);}
+  100% {transform: rotate(0deg);}
+}
+
+
+.welcome-text{
+  width: 100%;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 1.8;
+  color:var(--color-text);
+  position: relative;
+  left: 10px;
+  top: calc( 50% - 20px);
+}
+
 /* Section Formatting --------------------------------------------- */
 .section-margin{
   height: 3000px;
@@ -239,7 +315,7 @@ svg{
 .section{
   position: relative;
   width: 50%;
-  padding: 0px 4%;
+  padding: 200px 10%;
   margin: 0;
   background-color: var(--color-background);
   overflow: hidden;
@@ -300,21 +376,58 @@ svg{
 .section-detail-wrapper{
   position: relative;
   padding: 10% 0%;
+  text-align: justify;
 }
 
 .section-heading{
-  font-size: 18px;
+  font-size: 28px;
   font-weight: 700;
   line-height: 1.8;
   margin-top: 64px;
+  color: var(--color-text);
+  display: flex;
+  justify-content: center;
+}
+
+.illustration-one{
+display: flex;
+justify-content: center;
+scale: 0.8;
+margin-top: -50px ;
+}
+
+
+.section-text-one{
+  font-size: 23px;
+  font-weight: 100;
+  line-height: 1.8;
+  margin-top: 0px;
+  color:var(--color-text);
+  text-align: justify;
+}
+
+.section-heading-two{
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.8;
+  margin-top: 15px;
   color: var(--color-text);
 }
 
 .section-text{
   line-height: 2;
-  margin-top: 18px;
+  margin-top: 10px;
   font-size: 16px;
   color: var(--color-text);
+}
+
+.item-listing{
+  line-height: 2;
+  margin-top: 10px;
+  font-size: 16px;
+  color: var(--color-text);
+  display: flex;
+  justify-content: center;
 }
 
 /* Fancy Decoration Part of Section */
@@ -491,6 +604,18 @@ svg{
     left: calc(50% - 55px);
     scale: 3.75;
     color: var(--color-text);
+  }
+  .illustration-one{
+    scale: 0.5;}
+
+  .accept-button{
+    height: 400px;
+    width: 100%;
+    top: calc(50% - 250px );
+    border-style: solid;
+  }
+  .bottone{
+
   }
 }
 
