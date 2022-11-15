@@ -11,8 +11,6 @@ export default class LanguageSwitcher   {
         this.language = this.getLanguage();
     }
 
-    
-
     getLanguage() {
         var dataStore;
         localStorage.getItem('language') == null ? setLanguage('en') : false;
@@ -27,6 +25,7 @@ export default class LanguageSwitcher   {
      }
 
      setLanguage(lang){
-        localStorage.setItem("language", lang)
+        localStorage.setItem("language", lang);
+        this.language = this.getLanguage();
      }
 }

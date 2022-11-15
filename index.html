@@ -29,13 +29,13 @@
     <nav class="nav">
       <div class="container leftItems">
         <div class="logo">
-          <a href="#">YourLogo</a>
+          <a id="navBarTitle" href="#"></a>
         </div>
         <div class="main_list" id="mainListDiv">
           <ul>
-            <li><a href="#firstSection" target="_self">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">contact</a></li>
+            <li><a id="navBarHome" href="#firstSection" target="_self"></a></li>
+            <li><a id="navBarTwo" href="#"></a></li>
+            <li><a id="navBarThree" href="#"></a></li>
           </ul>
         </div>
         <div class="container" id="theme_controls">
@@ -55,6 +55,10 @@
             </svg>
           </div>
         </div>
+        <div>
+          <button id="en_switcher"> EN</button>
+        <button id="fr_switcher" > FR</button>
+        </div>
         <div class="media_button">
           <button class="main_media_button" id="mediaButton">
             <span></span>
@@ -72,11 +76,11 @@
         <div class="hero-wrapper">
 
           <!-- Intro Stuff -->
-          <div class="intro-text">Boarding your Yacht</div>
+          <div id="introTextBoarding" class="intro-text"></div>
 
           <div id="btn" class="accept-button">
-            <button class="bottone" onclick="audio.play(); change();">music 🔊</button>
-            <button class="bottone" onclick="change();">no music 🔇</button>
+            <button id="perloaderMusic" class="bottone" onclick="audio.play(); change();">🔊</button>
+            <button id="preloaderNoMusic" class="bottone" onclick="change();">🔇</button>
             <script type="text/javascript">
               const audio = new Audio();
               audio.src = "../public/assets/music.mp3";
@@ -96,9 +100,9 @@
           </div>
 
           <div class="hero-main">
-            <P class="hero-main-title">OWN THE YACHT
+            <p id="heroMainTitle" class="hero-main-title"></p>
             <p>
-            <p class="hero-main-description">LIVE THE FREEDOM</p>
+            <p id="heroMainDescription" class="hero-main-description"></p>
           </div>
 
           <div class="hero-second">
@@ -107,9 +111,9 @@
           </div>
 
           <div class="hero-motion">
-            <P class="hero-main-title">OGMA
+            <P id="heroMainLogoText" class="hero-main-title">
             <p>
-            <p class="hero-motion-description">YachtClub</p>
+            <p id="heroDescriptorClub" class="hero-motion-description"></p>
           </div>
 
         </div>
@@ -127,7 +131,7 @@
 
         <div class="section-intro-wrapper">
           <h1 class="section-title">
-            <span class="section-title-text">The Club</span>
+            <span id="sectionOneTitle" class="section-title-text"> The Club </span>
             <div class="section-title-decoration styleOne"></div>
             <div class="section-title-decoration styleTwo"></div>
             <div class="section-title-decoration styleThree"></div>
@@ -137,63 +141,38 @@
 
 
         <div class="section-detail-wrapper">
-          <h3 class="section-heading">Introduction</h3>
-          <p class="section-text">As the first of its kind, Ogma is focused around yacht ownership and service utility.
-            Our members can use and enjoy our club, converting a typical membership into an asset.</p>
+          <h3 id="sectionOneHeader_one" class="section-heading">Introduction</h3>
+          <p id="sectionOneH1Text_one" class="section-text">As the first of its kind, Ogma is focused around yacht ownership and service utility. Our members can use and enjoy our club, converting a typical membership into an asset.</p>
           <p class="section-text"> ㅤ</p>
-          <ul role="list" class="listing">
-            <li class="item-listing">Members can lease or resell their membership</li>
-            <li class="item-listing">Payment for food and beverage will be in USD</li>
-          </ul>
+          <ul role="list" class="listing"><li id="sectionOneH1Text_listItem1" class="item-listing">Members can lease or resell their membership</li><li id="sectionOneH1Text_listItem2" class="item-listing">Payment for food and beverage will be in USD</li></ul>
           <p class="section-text"> ㅤ</p>
-          <p class="section-text">As the first of its kind, Ogma is focused around yacht ownership and service utility.
-            Our members can use and enjoy our club, converting a typical membership into an asset.</p>
-          <h3 class="section-heading">Why an NFT?</h3>
-          <p class="section-text">As an NFT, yacht and the membership become an asset to the token holder, which can
-            later be sold, transferred or leased to others on the secondary market. By utilizing NFT's, OGMA is able to
-            create a secure yacht ownership, cost reduction for it's owners, create a loyal, member-community that we
-            can provide special experiences for. NFT's create new modernistic financial models, which will allow OGMA to
-            deliver an exceptional and sustainable product for years to come.</p>
-          <h3 class="section-heading">Breakdown</h3>
-          <div class="illustration-one"><img class="illustration-two" src="/public/assets/ogma1.svg" alt=""></div>
-          <p class="section-text-one">all the assets to yacht club, or the yacht itself are purchased with a
-            cryptocurrency called Ether (ETH)</p>
-          <h3 class="section-heading-two">What is ETH and how do I get it?</h3>
-          <p class="section-text-list">ETH is the cryptocurrency of Ethereum.</p>
-          <h3 class="section-heading-two">Why can't I purchase it with my credit/debit card?</h3>
-          <p class="section-text-list">You will need a private hot wallet to receive your membership token. Explained in
-            detail below</p>
+          <p id="sectionOneH1Text_two" class="section-text">As the first of its kind, Ogma is focused around yacht ownership and service utility. Our members can use and enjoy our club, converting a typical membership into an asset.</p>
+          <h3 id="sectionOneHeader_two" class="section-heading">Why an NFT?</h3>
+          <p id="sectionOneH2Text_one" class="section-text">As an NFT, yacht and the membership become an asset to the token holder, which can later be sold, transferred or leased to others on the secondary market. By utilizing NFT's, OGMA is able to create a secure yacht ownership, cost reduction for it's owners, create a loyal, member-community that we can provide special experiences for. NFT's create new modernistic financial models, which will allow OGMA to deliver an exceptional and sustainable product for years to come.</p>
+          <h3 id="sectionOneHeader_three" class="section-heading">Breakdown</h3>
+          <div class="illustration-one"><img class ="illustration-two" src="/public/assets/ogma1.svg" alt=""></div>
+          <p id="sectionOneH3Text_one" class="section-text-one">all the assets to yacht club, or the yacht itself are purchased with a cryptocurrency called Ether (ETH)</p>
+          <h3 id="sectionOneH3_ethQuestionOne" class="section-list">What is ETH and how do I get it?</h3>
+          <p id="sectionOneH3_ethAnswerOne" class="section-text-list">ETH is the cryptocurrency of Ethereum.</p>
+          <h3 id="sectionOneH3_ethQuestionTwo" class="section-list">Why can't I purchase it with EUR via my credit/debit card?</h3>
+          <p id="sectionOneH3_ethAnswerTwo" class="section-text-list">You will need a private hot wallet to receive your membership token. Explained in detail below</p>
           <p class="section-text"> ㅤ</p>
-          <p class="section-text-one">The Yacht and the membershipis in the form of a Non-Fungible Token (NFT). It will
-            be available on our website in January 2023.</p>
+          <p id="sectionOneH3Text_two" class="section-text-one">The Yacht and the membershipis in the form of a Non-Fungible Token (NFT). It will be available on our website in January 2023.</p>
           <p class="section-text"> ㅤ</p>
-          <h3 class="section-heading-two">What is an NFT?</h3>
-          <p class="section-text">A non-fungible token is a unique and non-interchangeable unit of data stored on a
-            digital ledger. NFTs can be used to represent easily-reproducible items such as photos, videos, audio, and
-            other types of digital files as unique items, and use blockchain technology to establish a verified and
-            public proof of ownership</p>
+          <h3 id="sectionOneH3_q1" class="section-heading-two">What is an NFT?</h3>
+          <p id="sectionOneH3_a1" class="section-text">A non-fungible token is a unique and non-interchangeable unit of data stored on a digital ledger. NFTs can be used to represent easily-reproducible items such as photos, videos, audio, and other types of digital files as unique items, and use blockchain technology to establish a verified and public proof of ownership</p>
           <p class="section-text"> ㅤ</p>
-          <h3 class="section-heading-two">What is hot wallet?</h3>
-          <p class="section-text">A hot wallet refers to a virtual currency wallet that is accessible online, and it
-            facilitates cryptocurrency transactions between the owner and end-users. A collection of private keys stored
-            on a program connected to the internet is used to store and send different currencies such as Etherium,
-            Bitcoin, etc. There are two wallets you will need. One to purchase the cryptocurrency ETH (we recommend
-            Coinbase) and the other to purchase the NFT (we recommend Metamask).</p>
+          <h3 id="sectionOneH3_q2" class="section-heading-two">What is hot wallet?</h3>
+          <p id="sectionOneH3_a2" class="section-text">A hot wallet refers to a virtual currency wallet that is accessible online, and it facilitates cryptocurrency transactions between the owner and end-users. A collection of private keys stored on a program connected to the internet is used to store and send different currencies such as Etherium, Bitcoin, etc. There are two wallets you will need. One to purchase the cryptocurrency ETH (we recommend Coinbase) and the other to purchase the NFT (we recommend Metamask).</p>
           <p class="section-text"> ㅤ</p>
-          <h3 class="section-heading-two">Why do I need a hot wallet? Can't I just transfer money from my account from a
-            crypto-exchange?</h3>
-          <p class="section-text">Hot wallets is how you would store NFTs. When you buy ETH from an exchange, the ETH is
-            often stored in an account balance for you. These account balances might not be set up to receive NFTs if
-            you use it to send funds.</p>
-          <div class="illustration-two"><img class="illustration-two" src="/public/assets/ogma2.svg" alt=""></div>
+          <h3 id="sectionOneH3_q3" class="section-heading-two">Why do I need a hot wallet? Can't I just transfer money from my account from a crypto-exchange?</h3>
+          <p id="sectionOneH3_a3" class="section-text">Hot wallets is how you would store NFTs. When you buy ETH from an exchange, the ETH is often stored in an account balance for you. These account balances might not be set up to receive NFTs if you use it to send funds.</p>
+          <div class="illustration-two"><img class ="illustration-two" src="/public/assets/ogma2.svg" alt=""></div>
           <p class="section-text"> ㅤ</p>
           <p class="section-text"> ㅤ</p>
-          <p class="section-text-one">After the purchase is successful, the shares of your yacht in NFT will be
-            automatically transferred into your hot wallet.</p>
-          <p class="section-text">Once you own at least one share of the Yacht and it's digital certificate NFT, you
-            will be able to book the use of your yacht on our website. Non-token holders will not have the ability to
-            make reservations or use the yacht in any way. This is an extremely exclusive club.</p>
-          <div class="illustration-three"><img class="illustration-two" src="/public/assets/ogma3.svg" alt=""></div>
+          <p id="sectionOneH3Text_three" class="section-text-one">After the purchase is successful, the shares of your yacht in NFT will be automatically transferred into your hot wallet.</p>
+          <p id="sectionOneH3Text_four" class="section-text">Once you own at least one share of the Yacht and it's digital certificate NFT, you will be able to book the use of your yacht on our website. Non-token holders will not have the ability to make reservations or use the yacht in any way. This is an extremely exclusive club.</p>
+          <div class="illustration-three"><img class ="illustration-two" src="/public/assets/ogma3.svg" alt=""></div>
           <p class="section-text"> ㅤ</p>
           <p class="section-text"> ㅤ</p>
         </div>

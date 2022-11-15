@@ -5,6 +5,15 @@
     "preloaderTextStart" : "startF" ,
     "preloaderBoardingYacht" : "BoardingF" ,
 
+
+    "perloaderMusic" :"musique",
+    "preloaderNoMusic" : "non musique",
+
+    "navBarTitle" : "OGMAfr",
+    "navBarHome" :"HOMEfr",
+    "navBarTwo" : "ABOUTfr",
+    "navBarThree" : "CONTACTfr",
+
     "heroOwnTheYacht" : "Own the FRENCH",
     "heroLiveFreedom" : "Live the FRENCH",
 

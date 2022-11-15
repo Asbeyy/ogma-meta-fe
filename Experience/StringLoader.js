@@ -1,5 +1,4 @@
 import { EventEmitter } from "events";
-import $ from "jquery";
 import Experience from "./Experience.js";
 
 export default class StringLoader extends EventEmitter{ 
@@ -7,15 +6,14 @@ export default class StringLoader extends EventEmitter{
         super()
         this.experience = new Experience();
 
-        // this.englishSwitch = document.getElementById("en_switcher");
-        // this.frenchSwitch = document.getElementById("fr_switcher");
-
-        this.experience = new Experience();
+        this.englishSwitch = document.getElementById("en_switcher");
+        this.frenchSwitch = document.getElementById("fr_switcher");
         this.language = this.experience.LanguageSwitcher.language;
         
 
-        //this.assignHero();
-       // this.setEventsListener();
+        this.assignHero();
+        this.setNavBarLanguageText();
+       this.setEventsListener();
 
         
 
@@ -36,9 +34,15 @@ export default class StringLoader extends EventEmitter{
         document.querySelector("#heroMainLogoText").textContent = (this.language.logo);
         document.querySelector("#heroDescriptorClub").textContent = (this.language.yachtClub);
     }
+
+    assignNavBar(){
+        document.getElementById("navBarTitle").innerText = this.experience.LanguageSwitcher.language.navBarTitle;
+        document.getElementById("navBarHome").innerText = this.experience.LanguageSwitcher.language.navBarHome;
+        document.getElementById("navBarTwo").innerText = this.experience.LanguageSwitcher.language.navBarTwo;
+        document.getElementById("navBarThree").innerText = this.experience.LanguageSwitcher.language.navBarThree;
+    }
     
     assignSectionOne(){
-
     }
 
     assignSectionTwo(
@@ -49,9 +53,14 @@ export default class StringLoader extends EventEmitter{
 
     ){}
 
+    updateLanguage(){
+        this.language = this.experience.LanguageSwitcher.language;
+    }
+
     update(){
+        this.updateLanguage();
         this.assignHero();
-        console.log("reload")
+        this.setNavBarLanguageText();
     }
 
 
