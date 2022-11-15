@@ -5,8 +5,6 @@ import Sizes from "./Utils/Sizes.js";
 import Time from "./Utils/Time.js";
 import Resources from "./Utils/Resources.js";
 import assets from "./Utils/assets.js";
-import LanguageSwitcher from "./LanguageSwitcher.js";
-import StringLoader from "./StringLoader.jsx";
 
 import Camera from "./Camera.js";
 import Theme from "./Theme.js";
@@ -41,7 +39,6 @@ export default class Experience {
         this.world = new World();
         this.LanguageSwitcher = new LanguageSwitcher();
         this.preloader = new Preloader();
-        this.LanguageSwitcher = new LanguageSwitcher();
         
 
         

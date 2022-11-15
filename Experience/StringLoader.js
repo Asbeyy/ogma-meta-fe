@@ -12,7 +12,7 @@ export default class StringLoader extends EventEmitter{
         
 
         this.assignHero();
-        this.setNavBarLanguageText();
+        this.assignNavBar();
        this.setEventsListener();
 
         
@@ -60,7 +60,7 @@ export default class StringLoader extends EventEmitter{
     update(){
         this.updateLanguage();
         this.assignHero();
-        this.setNavBarLanguageText();
+        this.assignNavBar();
     }
 
 
