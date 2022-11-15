@@ -1,9 +1,12 @@
 import * as THREE from "three";
+import $ from "jquery";
 
 import Sizes from "./Utils/Sizes.js";
 import Time from "./Utils/Time.js";
 import Resources from "./Utils/Resources.js";
 import assets from "./Utils/assets.js";
+import LanguageSwitcher from "./LanguageSwitcher.js";
+import StringLoader from "./StringLoader.jsx";
 
 import Camera from "./Camera.js";
 import Theme from "./Theme.js";
@@ -15,10 +18,13 @@ import Controls from "./World/Controls.js";
 
 export default class Experience {
     static instance;
+
     constructor(canvas) {
         if (Experience.instance) {
             return Experience.instance;
         }
+
+        
         Experience.instance = this;
         this.canvas = canvas;
         this.scene = new THREE.Scene();
@@ -28,11 +34,17 @@ export default class Experience {
         this.renderer = new Renderer();
         this.resources = new Resources(assets);
         this.theme = new Theme();
+        
         this.world = new World();
         this.preloader = new Preloader();
+        this.LanguageSwitcher = new LanguageSwitcher();
+        
+
+        
 
         this.preloader.on("enablecontrols", () => {
             this.controls = new Controls();
+            this.stringLoader = new StringLoader();
         });
 
         this.sizes.on("resize", () => {
@@ -58,4 +70,19 @@ export default class Experience {
             this.controls.update();
         }
     }
+
+    getLanguage() {
+        var dataStore;
+        localStorage.getItem('language') == null ? setLanguage('en') : false;
+         $.ajax({ 
+             url:  '/Experience/Language/' +  localStorage.getItem('language') + '.json', 
+             dataType: 'json', async: false ,
+             success: function (data) { 
+                console.log("WE HAVE FOUND JSON ")
+                 console.log(data)
+                 dataStore= data;
+             }
+      });
+      return dataStore;
+     }
 }
