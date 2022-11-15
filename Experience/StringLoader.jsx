@@ -14,20 +14,44 @@ export default class StringLoader extends EventEmitter{
         this.language = this.experience.LanguageSwitcher.language;
         
 
-        this.preloaderBoardingYacht = document.getElementById("club");
-        this.preloaderBoardingYacht.innerHTML = (this.language.preloaderBoardingYacht);
+        this.assignHero();
+        this.setEventsListener();
 
         
 
     }
 
-    assignHero(){}
+    setEventsListener(){
+        this.englishSwitch.addEventListener("click", () => {
+            this.emit("language_switch", "en");
+        });
+        this.frenchSwitch.addEventListener("click", () => {
+            this.emit("language_switch", "fr");
+        });
+    }
+
+    assignHero(){
+        document.getElementById("heroMainTitle").textContent = (this.language.heroOwnTheYacht);
+        document.getElementById("heroMainDescription").textContent = (this.language.heroLiveFreedom);
+        document.getElementById("heroMainLogoText").textContent = (this.language.logo);
+        document.getElementById("heroDescriptorClub").textContent = (this.language.yachtClub);
+    }
     
-    assignSectionOne(){}
+    assignSectionOne(){
 
-    assignSectionTwo() {}
+    }
 
-    assignSectionThree(){}
+    assignSectionTwo(
+
+    ) {}
+
+    assignSectionThree(
+        
+    ){}
+
+    update(){
+        this.assignHero();
+    }
 
 
 }
