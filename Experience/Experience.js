@@ -38,13 +38,14 @@ export default class Experience {
         this.world = new World();
         this.preloader = new Preloader();
         this.LanguageSwitcher = new LanguageSwitcher();
-        
-
-        
 
         this.preloader.on("enablecontrols", () => {
             this.controls = new Controls();
             this.stringLoader = new StringLoader();
+            this.stringLoader.on("language_switch", (lang) =>{
+                this.LanguageSwitcher.setLanguage(lang);
+                this.stringLoader.update();
+            });
         });
 
         this.sizes.on("resize", () => {
@@ -53,6 +54,12 @@ export default class Experience {
         this.time.on("update", () => {
             this.update();
         });
+
+
+        // this.stringLoader.on("language_switch", (lang) =>{
+        //     this.LanguageSwitcher.setLanguage(lang);
+        //     this.LanguageSwitcher.update();
+        // });
     }
 
     resize() {
