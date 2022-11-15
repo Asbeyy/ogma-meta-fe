@@ -16,6 +16,9 @@ import Preloader from "./Preloader.js";
 import World from "./World/World.js";
 import Controls from "./World/Controls.js";
 
+import LanguageSwitcher from "./LanguageSwitcher.js";
+import StringLoader from "./StringLoader.js";
+
 export default class Experience {
     static instance;
 
@@ -36,6 +39,7 @@ export default class Experience {
         this.theme = new Theme();
         
         this.world = new World();
+        this.LanguageSwitcher = new LanguageSwitcher();
         this.preloader = new Preloader();
         this.LanguageSwitcher = new LanguageSwitcher();
         
@@ -45,6 +49,9 @@ export default class Experience {
         this.preloader.on("enablecontrols", () => {
             this.controls = new Controls();
             this.stringLoader = new StringLoader();
+            this.stringLoader.on("language_switch", (lang) =>{
+                this.LanguageSwitcher.setLanguage(lang);
+                this.stringLoader.update();})
         });
 
         this.sizes.on("resize", () => {
@@ -70,19 +77,5 @@ export default class Experience {
             this.controls.update();
         }
     }
-
-    getLanguage() {
-        var dataStore;
-        localStorage.getItem('language') == null ? setLanguage('en') : false;
-         $.ajax({ 
-             url:  '/Experience/Language/' +  localStorage.getItem('language') + '.json', 
-             dataType: 'json', async: false ,
-             success: function (data) { 
-                console.log("WE HAVE FOUND JSON ")
-                 console.log(data)
-                 dataStore= data;
-             }
-      });
-      return dataStore;
-     }
+    
 }

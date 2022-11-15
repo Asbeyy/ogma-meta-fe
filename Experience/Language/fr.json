@@ -2,8 +2,17 @@
     "logo": "OGMA FRENCH",
     "yachtClub" : "YachtClub FRENCH",
 
-    "preloaderTextStart" : "startFRENCH" ,
-    "preloaderBoardingYacht" : "Boarding your FRENCH" ,
+    "preloaderTextStart" : "startF" ,
+    "preloaderBoardingYacht" : "BoardingF" ,
+
+
+    "perloaderMusic" :"musique",
+    "preloaderNoMusic" : "non musique",
+
+    "navBarTitle" : "OGMAfr",
+    "navBarHome" :"HOMEfr",
+    "navBarTwo" : "ABOUTfr",
+    "navBarThree" : "CONTACTfr",
 
     "heroOwnTheYacht" : "Own the FRENCH",
     "heroLiveFreedom" : "Live the FRENCH",

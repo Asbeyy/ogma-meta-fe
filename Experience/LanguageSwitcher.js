@@ -11,8 +11,6 @@ export default class LanguageSwitcher   {
         this.language = this.getLanguage();
     }
 
-    
-
     getLanguage() {
         var dataStore;
         localStorage.getItem('language') == null ? setLanguage('en') : false;
@@ -25,31 +23,9 @@ export default class LanguageSwitcher   {
       });
       return dataStore;
      }
-     
 
-
-
-    async returnLanguage() {
-      localStorage.getItem('language') == null ? setLanguage('en') : false;
-      await fetch('/Experience/Language/' +  localStorage.getItem('language') + '.json')
-      .then(response => {
-        if(!response.ok){
-            throw new Error("HTTP error " + response.status);
-       }
-       return response.json();
-   })
-   .then(json => {
-       this.language = json;
-       console.log(this.language);
-   })
-   .catch(function () {
-       this.dataError = true;
-   })
-        }
-     
-    
-    setLanguage(lang) {
-        localStorage.setItem('language', lang);
-        }
-
+     setLanguage(lang){
+        localStorage.setItem("language", lang);
+        this.language = this.getLanguage();
+     }
 }

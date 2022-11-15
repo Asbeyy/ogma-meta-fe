@@ -5,6 +5,15 @@
     "preloaderTextStart" : "start" ,
     "preloaderBoardingYacht" : "Boarding your Yacht",
 
+
+    "perloaderMusic" :"music",
+    "preloaderNoMusic" : "no music",
+
+    "navBarTitle" : "OGMA",
+    "navBarHome" :"HOME",
+    "navBarTwo" : "ABOUT",
+    "navBarThree" : "CONTACT",
+
     "heroOwnTheYacht" : "Own the yacht",
     "heroLiveFreedom" : "Live the Freedom",
 
