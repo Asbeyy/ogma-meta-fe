@@ -31,10 +31,10 @@ export default class StringLoader extends EventEmitter{
     }
 
     assignHero(){
-        document.getElementById("heroMainTitle").textContent = (this.language.heroOwnTheYacht);
-        document.getElementById("heroMainDescription").textContent = (this.language.heroLiveFreedom);
-        document.getElementById("heroMainLogoText").textContent = (this.language.logo);
-        document.getElementById("heroDescriptorClub").textContent = (this.language.yachtClub);
+        document.querySelector("#heroMainTitle").textContent = (this.language.heroOwnTheYacht);
+        document.querySelector("#heroMainDescription").textContent = (this.language.heroLiveFreedom);
+        document.querySelector("#heroMainLogoText").textContent = (this.language.logo);
+        document.querySelector("#heroDescriptorClub").textContent = (this.language.yachtClub);
     }
     
     assignSectionOne(){
@@ -46,11 +46,12 @@ export default class StringLoader extends EventEmitter{
     ) {}
 
     assignSectionThree(
-        
+
     ){}
 
     update(){
         this.assignHero();
+        console.log("reload")
     }
 
 
