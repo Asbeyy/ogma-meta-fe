@@ -19,9 +19,25 @@ export default class Preloader extends EventEmitter {
         });
 
         this.world.on("worldready", () => {
+
+            this.setAssetLanguageText();
+            //this.setNavBarLanguageText();
             this.setAssets();
             this.playIntro();
         });
+    }
+
+    setAssetLanguageText(){
+        document.getElementById("introTextBoarding").innerText = this.experience.LanguageSwitcher.language.preloaderBoardingYacht;
+        document.getElementById("perloaderMusic").innerText = this.experience.LanguageSwitcher.language.perloaderMusic;
+        document.getElementById("preloaderNoMusic").innerText = this.experience.LanguageSwitcher.language.preloaderNoMusic;
+    }
+
+    setNavBarLanguageText(){
+        document.getElementById("navBarTitle").innerText = this.experience.LanguageSwitcher.language.navBarTitle;
+        document.getElementById("navBarHome").innerText = this.experience.LanguageSwitcher.language.navBarHome;
+        document.getElementById("navBarTwo").innerText = this.experience.LanguageSwitcher.language.navBarTwo;
+        document.getElementById("navBarThree").innerText = this.experience.LanguageSwitcher.language.navBarThree;
     }
 
     setAssets() {
@@ -260,191 +276,6 @@ export default class Preloader extends EventEmitter {
                     },
                     ">-0.4"
                 )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                 
                 .to(

@@ -1,197 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OGMA YACHT CLUB</title>
-  </head>
-  <body class="light-theme">
-    <div class="experience">
-      <canvas class="experience-canvas"></canvas>
-    </div>
 
-    <!-- Preloader -->
-    <div class="preloader">
-      <div class="preloader-wrapper">
-        <div class="loading">
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OGMA YACHT CLUB</title>
+</head>
+
+<body class="light-theme">
+  <div class="experience">
+    <canvas class="experience-canvas"></canvas>
+  </div>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-wrapper">
+      <div class="loading">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
       </div>
     </div>
+  </div>
 
-    <div class="page" asscroll-container>
+  <div class="page" asscroll-container>
 
-      <div class="toggle-bar">
-        <div class="sun-wrapper">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path fill="currentColor" d="M12 5Q11.575 5 11.288 4.712Q11 4.425 11 4V2Q11 1.575 11.288 1.287Q11.575 1 12 1Q12.425 1 12.713 1.287Q13 1.575 13 2V4Q13 4.425 12.713 4.712Q12.425 5 12 5ZM16.95 7.05Q16.675 6.775 16.675 6.362Q16.675 5.95 16.95 5.65L18.35 4.225Q18.65 3.925 19.062 3.925Q19.475 3.925 19.775 4.225Q20.05 4.5 20.05 4.925Q20.05 5.35 19.775 5.625L18.35 7.05Q18.075 7.325 17.65 7.325Q17.225 7.325 16.95 7.05ZM20 13Q19.575 13 19.288 12.712Q19 12.425 19 12Q19 11.575 19.288 11.287Q19.575 11 20 11H22Q22.425 11 22.712 11.287Q23 11.575 23 12Q23 12.425 22.712 12.712Q22.425 13 22 13ZM12 23Q11.575 23 11.288 22.712Q11 22.425 11 22V20Q11 19.575 11.288 19.288Q11.575 19 12 19Q12.425 19 12.713 19.288Q13 19.575 13 20V22Q13 22.425 12.713 22.712Q12.425 23 12 23ZM5.65 7.05 4.225 5.65Q3.925 5.35 3.925 4.925Q3.925 4.5 4.225 4.225Q4.5 3.95 4.925 3.95Q5.35 3.95 5.625 4.225L7.05 5.65Q7.325 5.925 7.325 6.35Q7.325 6.775 7.05 7.05Q6.75 7.325 6.35 7.325Q5.95 7.325 5.65 7.05ZM18.35 19.775 16.95 18.35Q16.675 18.05 16.675 17.638Q16.675 17.225 16.95 16.95Q17.225 16.675 17.638 16.675Q18.05 16.675 18.35 16.95L19.775 18.35Q20.075 18.625 20.062 19.05Q20.05 19.475 19.775 19.775Q19.475 20.075 19.05 20.075Q18.625 20.075 18.35 19.775ZM2 13Q1.575 13 1.288 12.712Q1 12.425 1 12Q1 11.575 1.288 11.287Q1.575 11 2 11H4Q4.425 11 4.713 11.287Q5 11.575 5 12Q5 12.425 4.713 12.712Q4.425 13 4 13ZM4.225 19.775Q3.95 19.5 3.95 19.075Q3.95 18.65 4.225 18.375L5.65 16.95Q5.925 16.675 6.338 16.675Q6.75 16.675 7.05 16.95Q7.35 17.25 7.35 17.663Q7.35 18.075 7.05 18.375L5.65 19.775Q5.35 20.075 4.925 20.075Q4.5 20.075 4.225 19.775ZM12 18Q9.5 18 7.75 16.25Q6 14.5 6 12Q6 9.5 7.75 7.75Q9.5 6 12 6Q14.5 6 16.25 7.75Q18 9.5 18 12Q18 14.5 16.25 16.25Q14.5 18 12 18ZM12 16Q13.65 16 14.825 14.825Q16 13.65 16 12Q16 10.35 14.825 9.175Q13.65 8 12 8Q10.35 8 9.175 9.175Q8 10.35 8 12Q8 13.65 9.175 14.825Q10.35 16 12 16Z"/></svg>
+    <nav class="nav">
+      <div class="container leftItems">
+        <div class="logo">
+          <a id="navBarTitle" href="#"></a>
         </div>
-        <button class="toggle-button">
-          <div class="toggle-circle"></div>
-        </button>
-        <div class="moon-wrapper">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path fill="currentColor" d="M12 21Q8.25 21 5.625 18.375Q3 15.75 3 12Q3 8.25 5.625 5.625Q8.25 3 12 3Q12.35 3 12.688 3.025Q13.025 3.05 13.35 3.1Q12.325 3.825 11.713 4.987Q11.1 6.15 11.1 7.5Q11.1 9.75 12.675 11.325Q14.25 12.9 16.5 12.9Q17.875 12.9 19.025 12.287Q20.175 11.675 20.9 10.65Q20.95 10.975 20.975 11.312Q21 11.65 21 12Q21 15.75 18.375 18.375Q15.75 21 12 21ZM12 19Q14.2 19 15.95 17.788Q17.7 16.575 18.5 14.625Q18 14.75 17.5 14.825Q17 14.9 16.5 14.9Q13.425 14.9 11.262 12.738Q9.1 10.575 9.1 7.5Q9.1 7 9.175 6.5Q9.25 6 9.375 5.5Q7.425 6.3 6.213 8.05Q5 9.8 5 12Q5 14.9 7.05 16.95Q9.1 19 12 19ZM11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Z"/></svg>
+        <div class="main_list" id="mainListDiv">
+          <ul>
+            <li><a id="navBarHome" href="#firstSection" target="_self"></a></li>
+            <li><a id="navBarTwo" href="#"></a></li>
+            <li><a id="navBarThree" href="#"></a></li>
+          </ul>
+        </div>
+        <div class="container" id="theme_controls">
+          <div class="sun-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+              <path fill="currentColor"
+                d="M12 5Q11.575 5 11.288 4.712Q11 4.425 11 4V2Q11 1.575 11.288 1.287Q11.575 1 12 1Q12.425 1 12.713 1.287Q13 1.575 13 2V4Q13 4.425 12.713 4.712Q12.425 5 12 5ZM16.95 7.05Q16.675 6.775 16.675 6.362Q16.675 5.95 16.95 5.65L18.35 4.225Q18.65 3.925 19.062 3.925Q19.475 3.925 19.775 4.225Q20.05 4.5 20.05 4.925Q20.05 5.35 19.775 5.625L18.35 7.05Q18.075 7.325 17.65 7.325Q17.225 7.325 16.95 7.05ZM20 13Q19.575 13 19.288 12.712Q19 12.425 19 12Q19 11.575 19.288 11.287Q19.575 11 20 11H22Q22.425 11 22.712 11.287Q23 11.575 23 12Q23 12.425 22.712 12.712Q22.425 13 22 13ZM12 23Q11.575 23 11.288 22.712Q11 22.425 11 22V20Q11 19.575 11.288 19.288Q11.575 19 12 19Q12.425 19 12.713 19.288Q13 19.575 13 20V22Q13 22.425 12.713 22.712Q12.425 23 12 23ZM5.65 7.05 4.225 5.65Q3.925 5.35 3.925 4.925Q3.925 4.5 4.225 4.225Q4.5 3.95 4.925 3.95Q5.35 3.95 5.625 4.225L7.05 5.65Q7.325 5.925 7.325 6.35Q7.325 6.775 7.05 7.05Q6.75 7.325 6.35 7.325Q5.95 7.325 5.65 7.05ZM18.35 19.775 16.95 18.35Q16.675 18.05 16.675 17.638Q16.675 17.225 16.95 16.95Q17.225 16.675 17.638 16.675Q18.05 16.675 18.35 16.95L19.775 18.35Q20.075 18.625 20.062 19.05Q20.05 19.475 19.775 19.775Q19.475 20.075 19.05 20.075Q18.625 20.075 18.35 19.775ZM2 13Q1.575 13 1.288 12.712Q1 12.425 1 12Q1 11.575 1.288 11.287Q1.575 11 2 11H4Q4.425 11 4.713 11.287Q5 11.575 5 12Q5 12.425 4.713 12.712Q4.425 13 4 13ZM4.225 19.775Q3.95 19.5 3.95 19.075Q3.95 18.65 4.225 18.375L5.65 16.95Q5.925 16.675 6.338 16.675Q6.75 16.675 7.05 16.95Q7.35 17.25 7.35 17.663Q7.35 18.075 7.05 18.375L5.65 19.775Q5.35 20.075 4.925 20.075Q4.5 20.075 4.225 19.775ZM12 18Q9.5 18 7.75 16.25Q6 14.5 6 12Q6 9.5 7.75 7.75Q9.5 6 12 6Q14.5 6 16.25 7.75Q18 9.5 18 12Q18 14.5 16.25 16.25Q14.5 18 12 18ZM12 16Q13.65 16 14.825 14.825Q16 13.65 16 12Q16 10.35 14.825 9.175Q13.65 8 12 8Q10.35 8 9.175 9.175Q8 10.35 8 12Q8 13.65 9.175 14.825Q10.35 16 12 16Z" />
+            </svg>
+          </div>
+          <button class="toggle-button">
+            <div class="toggle-circle"></div>
+          </button>
+          <div class="moon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+              <path fill="currentColor"
+                d="M12 21Q8.25 21 5.625 18.375Q3 15.75 3 12Q3 8.25 5.625 5.625Q8.25 3 12 3Q12.35 3 12.688 3.025Q13.025 3.05 13.35 3.1Q12.325 3.825 11.713 4.987Q11.1 6.15 11.1 7.5Q11.1 9.75 12.675 11.325Q14.25 12.9 16.5 12.9Q17.875 12.9 19.025 12.287Q20.175 11.675 20.9 10.65Q20.95 10.975 20.975 11.312Q21 11.65 21 12Q21 15.75 18.375 18.375Q15.75 21 12 21ZM12 19Q14.2 19 15.95 17.788Q17.7 16.575 18.5 14.625Q18 14.75 17.5 14.825Q17 14.9 16.5 14.9Q13.425 14.9 11.262 12.738Q9.1 10.575 9.1 7.5Q9.1 7 9.175 6.5Q9.25 6 9.375 5.5Q7.425 6.3 6.213 8.05Q5 9.8 5 12Q5 14.9 7.05 16.95Q9.1 19 12 19ZM11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Z" />
+            </svg>
+          </div>
+        </div>
+        <div>
+          <button id="en_switcher"> EN</button>
+        <button id="fr_switcher" > FR</button>
+        </div>
+        <div class="media_button">
+          <button class="main_media_button" id="mediaButton">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </div>
-      
-      <div class="page-wrapper" asscroll>
-        <section class="hero">
-          <div class="hero-wrapper">
 
-            <!-- Intro Stuff -->
-            <div class="intro-text">Boarding your Yacht</div>
+    </nav>
 
-            <div id="btn" class="accept-button">
-                <button class="bottone" onclick="audio.play(); change();">music 🔊</button>
-                <button class="bottone" onclick="change();">no music 🔇</button>
-                <script type="text/javascript">
-                    const audio = new Audio();
-                    audio.src = "../public/assets/music.mp3";
-                </script>
-                <script>
-                  function change (){
-                  document.getElementById("btn").style.display = "none";}
-                </script>
-            </div>
 
-            <div class="arrow-svg-wrapper">
-              <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path fill="currentColor" d="M12 14.95q-.2 0-.375-.063-.175-.062-.325-.212L6.675 10.05q-.275-.275-.262-.688.012-.412.287-.687.275-.275.7-.275.425 0 .7.275l3.9 3.9 3.925-3.925q.275-.275.688-.263.412.013.687.288.275.275.275.7 0 .425-.275.7l-4.6 4.6q-.15.15-.325.212-.175.063-.375.063Z"/></svg>
-            </div>
+    <div class="page-wrapper" asscroll>
+      <section class="hero">
+        <div class="hero-wrapper">
 
-            <div class="hero-main">
-              <P class="hero-main-title">OWN THE YACHT<p>
-              <p class="hero-main-description">LIVE THE FREEDOM</p>
-            </div>
+          <!-- Intro Stuff -->
+          <div id="introTextBoarding" class="intro-text"></div>
 
-            <div class="hero-second">
-              <p class="hero-second-subheading first-sub"></p>
-              <p class="hero-second-subheading second-sub"></p>
-            </div>
-            
-            <div class="hero-motion">
-              <P class="hero-main-title">OGMA<p>
-              <p class="hero-motion-description">YachtClub</p>
-            </div>
-
+          <div id="btn" class="accept-button">
+            <button id="perloaderMusic" class="bottone" onclick="audio.play(); change();">🔊</button>
+            <button id="preloaderNoMusic" class="bottone" onclick="change();">🔇</button>
+            <script type="text/javascript">
+              const audio = new Audio();
+              audio.src = "../public/assets/music.mp3";
+            </script>
+            <script>
+              function change() {
+                document.getElementById("btn").style.display = "none";
+              }
+            </script>
           </div>
 
-        </section>
-
-        <div class="first-move section-margin"></div>
-
-        <!-- SECTION ONE -->
-
-        <section class="first-section section left">
-          <div class="progress-wrapper progress-bar-wrapper-left">
-            <div class="progress-bar"></div>
+          <div class="arrow-svg-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+              <path fill="currentColor"
+                d="M12 14.95q-.2 0-.375-.063-.175-.062-.325-.212L6.675 10.05q-.275-.275-.262-.688.012-.412.287-.687.275-.275.7-.275.425 0 .7.275l3.9 3.9 3.925-3.925q.275-.275.688-.263.412.013.687.288.275.275.275.7 0 .425-.275.7l-4.6 4.6q-.15.15-.325.212-.175.063-.375.063Z" />
+            </svg>
           </div>
 
-          <div class="section-intro-wrapper">
-            <h1 class="section-title">
-              <span class="section-title-text">The Club</span>
-              <div class="section-title-decoration styleOne"></div>
-              <div class="section-title-decoration styleTwo"></div>
-              <div class="section-title-decoration styleThree"></div>
-            </h1>
-            <span class="section-number">01</span>
-          </div>
-  
-
-          <div class="section-detail-wrapper">
-            <h3 class="section-heading">Introduction</h3>
-            <p class="section-text">As the first of its kind, Ogma is focused around yacht ownership and service utility. Our members can use and enjoy our club, converting a typical membership into an asset.</p>
-            <p class="section-text"> ㅤ</p>
-            <ul role="list" class="listing"><li class="item-listing">Members can lease or resell their membership</li><li class="item-listing">Payment for food and beverage will be in USD</li></ul>
-            <p class="section-text"> ㅤ</p>
-            <p class="section-text">As the first of its kind, Ogma is focused around yacht ownership and service utility. Our members can use and enjoy our club, converting a typical membership into an asset.</p>
-            <h3 class="section-heading">Why an NFT?</h3>
-            <p class="section-text">As an NFT, yacht and the membership become an asset to the token holder, which can later be sold, transferred or leased to others on the secondary market. By utilizing NFT's, OGMA is able to create a secure yacht ownership, cost reduction for it's owners, create a loyal, member-community that we can provide special experiences for. NFT's create new modernistic financial models, which will allow OGMA to deliver an exceptional and sustainable product for years to come.</p>
-            <h3 class="section-heading">Breakdown</h3>
-            <div class="illustration-one"><img class ="illustration-two" src="/public/assets/ogma1.svg" alt=""></div>
-            <p class="section-text-one">all the assets to yacht club, or the yacht itself are purchased with a cryptocurrency called Ether (ETH)</p>
-            <h3 class="section-heading-two">What is ETH and how do I get it?</h3>
-            <p class="section-text-list">ETH is the cryptocurrency of Ethereum.</p>
-            <h3 class="section-heading-two">Why can't I purchase it with my credit/debit card?</h3>
-            <p class="section-text-list">You will need a private hot wallet to receive your membership token. Explained in detail below</p>
-            <p class="section-text"> ㅤ</p>
-            <p class="section-text-one">The Yacht and the membershipis in the form of a Non-Fungible Token (NFT). It will be available on our website in January 2023.</p>
-            <p class="section-text"> ㅤ</p>
-            <h3 class="section-heading-two">What is an NFT?</h3>
-            <p class="section-text">A non-fungible token is a unique and non-interchangeable unit of data stored on a digital ledger. NFTs can be used to represent easily-reproducible items such as photos, videos, audio, and other types of digital files as unique items, and use blockchain technology to establish a verified and public proof of ownership</p>
-            <p class="section-text"> ㅤ</p>
-            <h3 class="section-heading-two">What is hot wallet?</h3>
-            <p class="section-text">A hot wallet refers to a virtual currency wallet that is accessible online, and it facilitates cryptocurrency transactions between the owner and end-users. A collection of private keys stored on a program connected to the internet is used to store and send different currencies such as Etherium, Bitcoin, etc. There are two wallets you will need. One to purchase the cryptocurrency ETH (we recommend Coinbase) and the other to purchase the NFT (we recommend Metamask).</p>
-            <p class="section-text"> ㅤ</p>
-            <h3 class="section-heading-two">Why do I need a hot wallet? Can't I just transfer money from my account from a crypto-exchange?</h3>
-            <p class="section-text">Hot wallets is how you would store NFTs. When you buy ETH from an exchange, the ETH is often stored in an account balance for you. These account balances might not be set up to receive NFTs if you use it to send funds.</p>
-            <div class="illustration-two"><img class ="illustration-two" src="/public/assets/ogma2.svg" alt=""></div>
-            <p class="section-text"> ㅤ</p>
-            <p class="section-text"> ㅤ</p>
-            <p class="section-text-one">After the purchase is successful, the shares of your yacht in NFT will be automatically transferred into your hot wallet.</p>
-            <p class="section-text">Once you own at least one share of the Yacht and it's digital certificate NFT, you will be able to book the use of your yacht on our website. Non-token holders will not have the ability to make reservations or use the yacht in any way. This is an extremely exclusive club.</p>
-            <div class="illustration-three"><img class ="illustration-two" src="/public/assets/ogma3.svg" alt=""></div>
-            <p class="section-text"> ㅤ</p>
-            <p class="section-text"> ㅤ</p>
+          <div class="hero-main">
+            <p id="heroMainTitle" class="hero-main-title"></p>
+            <p>
+            <p id="heroMainDescription" class="hero-main-description"></p>
           </div>
 
-
-        </section>
-
-        <div class="second-move section-margin"></div>
-
-        <!-- SECTION TWO -->
-
-
-        <section class="second-section section right">
-          <div class="progress-wrapper progress-bar-wrapper-right">
-            <div class="progress-bar blue-background"></div>
+          <div class="hero-second">
+            <p class="hero-second-subheading first-sub"></p>
+            <p class="hero-second-subheading second-sub"></p>
           </div>
 
-          <div class="section-intro-wrapper blue-text blue-border">
-            <h1 class="section-title blue-text blue-border">
-              <span class="section-title-text blue-text">How it works</span>
-            </h1>
+          <div class="hero-motion">
+            <P id="heroMainLogoText" class="hero-main-title">
+            <p>
+            <p id="heroDescriptorClub" class="hero-motion-description"></p>
           </div>
 
-          <div class="section-detail-wrapper">
-            <h3 class="section-heading">Introduction</h3>
-            <p class="section-text">As the first of its kind, Ogma is focused around yacht ownership and service utility. Our members can use and enjoy our club, converting a typical membership into an asset.</p>
-            <p class="section-text"> ㅤ</p>
-            <ul role="list" class="listing"><li class="item-listing">Members can lease or resell their membership</li><li class="item-listing">Payment for food and beverage will be in USD</li></ul>
-            <p class="section-text"> ㅤ</p>
-            <p class="section-text">As the first of its kind, Ogma is focused around yacht ownership and service utility. Our members can use and enjoy our club, converting a typical membership into an asset.</p>
-            <h3 class="section-heading">Why an NFT?</h3>
-            <p class="section-text">As an NFT, yacht and the membership become an asset to the token holder, which can later be sold, transferred or leased to others on the secondary market. By utilizing NFT's, OGMA is able to create a secure yacht ownership, cost reduction for it's owners, create a loyal, member-community that we can provide special experiences for. NFT's create new modernistic financial models, which will allow OGMA to deliver an exceptional and sustainable product for years to come.</p>
-            <h3 class="section-heading">Breakdown</h3>
-            <div class="illustration-one"><img class ="illustration-two" src="/public/assets/ogma1.svg" alt=""></div>
-            <p class="section-text-one">all the assets to yacht club, or the yacht itself are purchased with a cryptocurrency called Ether (ETH)</p>
-            <h3 class="section-list">What is ETH and how do I get it?</h3>
-            <p class="section-text-list">ETH is the cryptocurrency of Ethereum.</p>
-            <h3 class="section-list">Why can't I purchase it with EUR via my credit/debit card?</h3>
-            <p class="section-text-list">You will need a private hot wallet to receive your membership token. Explained in detail below</p>
-            <p class="section-text"> ㅤ</p>
-            <p class="section-text-one">The Yacht and the membershipis in the form of a Non-Fungible Token (NFT). It will be available on our website in January 2023.</p>
-            <p class="section-text"> ㅤ</p>
-            <h3 class="section-heading-two">What is an NFT?</h3>
-            <p class="section-text">A non-fungible token is a unique and non-interchangeable unit of data stored on a digital ledger. NFTs can be used to represent easily-reproducible items such as photos, videos, audio, and other types of digital files as unique items, and use blockchain technology to establish a verified and public proof of ownership</p>
-            <p class="section-text"> ㅤ</p>
-            <h3 class="section-heading-two">What is hot wallet?</h3>
-            <p class="section-text">A hot wallet refers to a virtual currency wallet that is accessible online, and it facilitates cryptocurrency transactions between the owner and end-users. A collection of private keys stored on a program connected to the internet is used to store and send different currencies such as Etherium, Bitcoin, etc. There are two wallets you will need. One to purchase the cryptocurrency ETH (we recommend Coinbase) and the other to purchase the NFT (we recommend Metamask).</p>
-            <p class="section-text"> ㅤ</p>
-            <h3 class="section-heading-two">Why do I need a hot wallet? Can't I just transfer money from my account from a crypto-exchange?</h3>
-            <p class="section-text">Hot wallets is how you would store NFTs. When you buy ETH from an exchange, the ETH is often stored in an account balance for you. These account balances might not be set up to receive NFTs if you use it to send funds.</p>
-            <div class="illustration-two"><img class ="illustration-two" src="/public/assets/ogma2.svg" alt=""></div>
-            <p class="section-text"> ㅤ</p>
-            <p class="section-text"> ㅤ</p>
-            <p class="section-text-one">After the purchase is successful, the shares of your yacht in NFT will be automatically transferred into your hot wallet.</p>
-            <p class="section-text">Once you own at least one share of the Yacht and it's digital certificate NFT, you will be able to book the use of your yacht on our website. Non-token holders will not have the ability to make reservations or use the yacht in any way. This is an extremely exclusive club.</p>
-            <div class="illustration-three"><img class ="illustration-two" src="/public/assets/ogma3.svg" alt=""></div>
-            <p class="section-text"> ㅤ</p>
-            <p class="section-text"> ㅤ</p>
-          </div>
-        </section>
+        </div>
+
+      </section>
+
+      <div class="first-move section-margin"></div>
+
+      <!-- SECTION ONE -->
+
+      <section class="first-section section left">
+        <div class="progress-wrapper progress-bar-wrapper-left">
+          <div class="progress-bar"></div>
+        </div>
+
+        <div class="section-intro-wrapper">
+          <h1 class="section-title">
+            <span id="sectionOneTitle" class="section-title-text"> The Club </span>
+            <div class="section-title-decoration styleOne"></div>
+            <div class="section-title-decoration styleTwo"></div>
+            <div class="section-title-decoration styleThree"></div>
+          </h1>
+          <span class="section-number">01</span>
+        </div>
+
+
+        <div class="section-detail-wrapper">
+          <h3 id="sectionOneHeader_one" class="section-heading">Introduction</h3>
+          <p id="sectionOneH1Text_one" class="section-text">As the first of its kind, Ogma is focused around yacht ownership and service utility. Our members can use and enjoy our club, converting a typical membership into an asset.</p>
+          <p class="section-text"> ㅤ</p>
+          <ul role="list" class="listing"><li id="sectionOneH1Text_listItem1" class="item-listing">Members can lease or resell their membership</li><li id="sectionOneH1Text_listItem2" class="item-listing">Payment for food and beverage will be in USD</li></ul>
+          <p class="section-text"> ㅤ</p>
+          <p id="sectionOneH1Text_two" class="section-text">As the first of its kind, Ogma is focused around yacht ownership and service utility. Our members can use and enjoy our club, converting a typical membership into an asset.</p>
+          <h3 id="sectionOneHeader_two" class="section-heading">Why an NFT?</h3>
+          <p id="sectionOneH2Text_one" class="section-text">As an NFT, yacht and the membership become an asset to the token holder, which can later be sold, transferred or leased to others on the secondary market. By utilizing NFT's, OGMA is able to create a secure yacht ownership, cost reduction for it's owners, create a loyal, member-community that we can provide special experiences for. NFT's create new modernistic financial models, which will allow OGMA to deliver an exceptional and sustainable product for years to come.</p>
+          <h3 id="sectionOneHeader_three" class="section-heading">Breakdown</h3>
+          <div class="illustration-one"><img class ="illustration-two" src="/public/assets/ogma1.svg" alt=""></div>
+          <p id="sectionOneH3Text_one" class="section-text-one">all the assets to yacht club, or the yacht itself are purchased with a cryptocurrency called Ether (ETH)</p>
+          <h3 id="sectionOneH3_ethQuestionOne" class="section-list">What is ETH and how do I get it?</h3>
+          <p id="sectionOneH3_ethAnswerOne" class="section-text-list">ETH is the cryptocurrency of Ethereum.</p>
+          <h3 id="sectionOneH3_ethQuestionTwo" class="section-list">Why can't I purchase it with EUR via my credit/debit card?</h3>
+          <p id="sectionOneH3_ethAnswerTwo" class="section-text-list">You will need a private hot wallet to receive your membership token. Explained in detail below</p>
+          <p class="section-text"> ㅤ</p>
+          <p id="sectionOneH3Text_two" class="section-text-one">The Yacht and the membershipis in the form of a Non-Fungible Token (NFT). It will be available on our website in January 2023.</p>
+          <p class="section-text"> ㅤ</p>
+          <h3 id="sectionOneH3_q1" class="section-heading-two">What is an NFT?</h3>
+          <p id="sectionOneH3_a1" class="section-text">A non-fungible token is a unique and non-interchangeable unit of data stored on a digital ledger. NFTs can be used to represent easily-reproducible items such as photos, videos, audio, and other types of digital files as unique items, and use blockchain technology to establish a verified and public proof of ownership</p>
+          <p class="section-text"> ㅤ</p>
+          <h3 id="sectionOneH3_q2" class="section-heading-two">What is hot wallet?</h3>
+          <p id="sectionOneH3_a2" class="section-text">A hot wallet refers to a virtual currency wallet that is accessible online, and it facilitates cryptocurrency transactions between the owner and end-users. A collection of private keys stored on a program connected to the internet is used to store and send different currencies such as Etherium, Bitcoin, etc. There are two wallets you will need. One to purchase the cryptocurrency ETH (we recommend Coinbase) and the other to purchase the NFT (we recommend Metamask).</p>
+          <p class="section-text"> ㅤ</p>
+          <h3 id="sectionOneH3_q3" class="section-heading-two">Why do I need a hot wallet? Can't I just transfer money from my account from a crypto-exchange?</h3>
+          <p id="sectionOneH3_a3" class="section-text">Hot wallets is how you would store NFTs. When you buy ETH from an exchange, the ETH is often stored in an account balance for you. These account balances might not be set up to receive NFTs if you use it to send funds.</p>
+          <div class="illustration-two"><img class ="illustration-two" src="/public/assets/ogma2.svg" alt=""></div>
+          <p class="section-text"> ㅤ</p>
+          <p class="section-text"> ㅤ</p>
+          <p id="sectionOneH3Text_three" class="section-text-one">After the purchase is successful , the shares of your yacht in NFT will be automatically transferred into your hot wallet.</p>
+          <p id="sectionOneH3Text_four" class="section-text">Once you own at least one share of the Yacht and it's digital certificate NFT, you will be able to book the use of your yacht on our website. Non-token holders will not have the ability to make reservations or use the yacht in any way. This is an extremely exclusive club.</p>
+          <div class="illustration-three"><img class ="illustration-two" src="/public/assets/ogma3.svg" alt=""></div>
+          <p class="section-text"> ㅤ</p>
+          <p class="section-text"> ㅤ</p>
+        </div>
+
+
+      </section>
+
+      <div class="second-move section-margin"></div>
+
+      <!-- SECTION TWO -->
+
+
+      <section class="second-section section right">
+        <div class="progress-wrapper progress-bar-wrapper-right">
+          <div class="progress-bar blue-background"></div>
+        </div>
+
+        <div class="section-intro-wrapper blue-text blue-border">
+          <h1 class="section-title blue-text blue-border">
+            <span class="section-title-text blue-text">How it works</span>
+          </h1>
+        </div>
+
+        <div class="section-detail-wrapper">
+          <h3 class="section-heading">Introduction</h3>
+          <p class="section-text">As the first of its kind, Ogma is focused around yacht ownership and service utility.
+            Our members can use and enjoy our club, converting a typical membership into an asset.</p>
+          <p class="section-text"> ㅤ</p>
+          <ul role="list" class="listing">
+            <li class="item-listing">Members can lease or resell their membership</li>
+            <li class="item-listing">Payment for food and beverage will be in USD</li>
+          </ul>
+          <p class="section-text"> ㅤ</p>
+          <p class="section-text">As the first of its kind, Ogma is focused around yacht ownership and service utility.
+            Our members can use and enjoy our club, converting a typical membership into an asset.</p>
+          <h3 class="section-heading">Why an NFT?</h3>
+          <p class="section-text">As an NFT, yacht and the membership become an asset to the token holder, which can
+            later be sold, transferred or leased to others on the secondary market. By utilizing NFT's, OGMA is able to
+            create a secure yacht ownership, cost reduction for it's owners, create a loyal, member-community that we
+            can provide special experiences for. NFT's create new modernistic financial models, which will allow OGMA to
+            deliver an exceptional and sustainable product for years to come.</p>
+          <h3 class="section-heading">Breakdown</h3>
+          <div class="illustration-one"><img class="illustration-two" src="/public/assets/ogma1.svg" alt=""></div>
+          <p class="section-text-one">all the assets to yacht club, or the yacht itself are purchased with a
+            cryptocurrency called Ether (ETH)</p>
+          <h3 class="section-list">What is ETH and how do I get it?</h3>
+          <p class="section-text-list">ETH is the cryptocurrency of Ethereum.</p>
+          <h3 class="section-list">Why can't I purchase it with EUR via my credit/debit card?</h3>
+          <p class="section-text-list">You will need a private hot wallet to receive your membership token. Explained in
+            detail below</p>
+          <p class="section-text"> ㅤ</p>
+          <p class="section-text-one">The Yacht and the membershipis in the form of a Non-Fungible Token (NFT). It will
+            be available on our website in January 2023.</p>
+          <p class="section-text"> ㅤ</p>
+          <h3 class="section-heading-two">What is an NFT?</h3>
+          <p class="section-text">A non-fungible token is a unique and non-interchangeable unit of data stored on a
+            digital ledger. NFTs can be used to represent easily-reproducible items such as photos, videos, audio, and
+            other types of digital files as unique items, and use blockchain technology to establish a verified and
+            public proof of ownership</p>
+          <p class="section-text"> ㅤ</p>
+          <h3 class="section-heading-two">What is hot wallet?</h3>
+          <p class="section-text">A hot wallet refers to a virtual currency wallet that is accessible online, and it
+            facilitates cryptocurrency transactions between the owner and end-users. A collection of private keys stored
+            on a program connected to the internet is used to store and send different currencies such as Etherium,
+            Bitcoin, etc. There are two wallets you will need. One to purchase the cryptocurrency ETH (we recommend
+            Coinbase) and the other to purchase the NFT (we recommend Metamask).</p>
+          <p class="section-text"> ㅤ</p>
+          <h3 class="section-heading-two">Why do I need a hot wallet? Can't I just transfer money from my account from a
+            crypto-exchange?</h3>
+          <p class="section-text">Hot wallets is how you would store NFTs. When you buy ETH from an exchange, the ETH is
+            often stored in an account balance for you. These account balances might not be set up to receive NFTs if
+            you use it to send funds.</p>
+          <div class="illustration-two"><img class="illustration-two" src="/public/assets/ogma2.svg" alt=""></div>
+          <p class="section-text"> ㅤ</p>
+          <p class="section-text"> ㅤ</p>
+          <p class="section-text-one">After the purchase is successful, the shares of your yacht in NFT will be
+            automatically transferred into your hot wallet.</p>
+          <p class="section-text">Once you own at least one share of the Yacht and it's digital certificate NFT, you
+            will be able to book the use of your yacht on our website. Non-token holders will not have the ability to
+            make reservations or use the yacht in any way. This is an extremely exclusive club.</p>
+          <div class="illustration-three"><img class="illustration-two" src="/public/assets/ogma3.svg" alt=""></div>
+          <p class="section-text"> ㅤ</p>
+          <p class="section-text"> ㅤ</p>
+        </div>
+      </section>
 
 
 
@@ -199,45 +265,45 @@
 
 
 
-        <div class="third-move section-margin"></div>
+      <div class="third-move section-margin"></div>
 
-        <!-- SECTION THREE -->
+      <!-- SECTION THREE -->
 
-        <section class="third-section section left">
-          <div class="progress-wrapper progress-bar-wrapper-left">
-            <div class="progress-bar green-background"></div>
-          </div>
+      <section class="third-section section left">
+        <div class="progress-wrapper progress-bar-wrapper-left">
+          <div class="progress-bar green-background"></div>
+        </div>
 
-          <div class="section-intro-wrapper green-text green-border">
-            <h1 class="section-title green-text green-border">
-              <span class="section-title-text green-text">Join on board</span>
-              <div class="section-title-decoration styleOne green-border"></div>
-              <div class="section-title-decoration styleTwo green-border"></div>
-              <div class="section-title-decoration styleThree green-background green-border"></div>
-            </h1>
-            <span class="section-number green-text">03</span>
-          </div>
+        <div class="section-intro-wrapper green-text green-border">
+          <h1 class="section-title green-text green-border">
+            <span class="section-title-text green-text">Join on board</span>
+            <div class="section-title-decoration styleOne green-border"></div>
+            <div class="section-title-decoration styleTwo green-border"></div>
+            <div class="section-title-decoration styleThree green-background green-border"></div>
+          </h1>
+          <span class="section-number green-text">03</span>
+        </div>
 
-          <div class="section-detail-wrapper">
-            <h3 class="section-heading">Purchase Yacht</h3>
-            <p class="section-text">Section Under Construction</p>
-            <p class="section-text">Connect your wallet below and proceed to purchase shares of the Magellano 25, for it's private use. Once purchased, it will be your access key to the yacht, the services, the club, the events and much more. Connect to the website upon terminating your purchase, to access the digital space where you can make reservations and handle your pirvate cruises</p>
-            <p class="section-text"> ㅤ</p>
-            <p class="section-text">
-              <iframe
-                src="https://gateway.ipfscdn.io/ipfs/QmeuAdknvp9AjoeHKAJujou9j9z1nmVERBPsMNaMLQs2As/nft-drop.html?contract=0x8FD6bC8B0Feb218949D487a332dE02E763323Fe8&chainId=5&theme=dark&primaryColor=blue"
-                width="600px"
-                height="600px"
-                style="max-width:100%;"
-                frameborder="0"
-                class="web3">
-              </iframe>
-            </p>
-          </div>
-        </section>
+        <div class="section-detail-wrapper">
+          <h3 class="section-heading">Purchase Yacht</h3>
+          <p class="section-text">Section Under Construction</p>
+          <p class="section-text">Connect your wallet below and proceed to purchase shares of the Magellano 25, for it's
+            private use. Once purchased, it will be your access key to the yacht, the services, the club, the events and
+            much more. Connect to the website upon terminating your purchase, to access the digital space where you can
+            make reservations and handle your pirvate cruises</p>
+          <p class="section-text"> ㅤ</p>
+          <p class="section-text">
+            <iframe
+              src="https://gateway.ipfscdn.io/ipfs/QmeuAdknvp9AjoeHKAJujou9j9z1nmVERBPsMNaMLQs2As/nft-drop.html?contract=0x8FD6bC8B0Feb218949D487a332dE02E763323Fe8&chainId=5&theme=dark&primaryColor=blue"
+              width="600px" height="600px" style="max-width:100%;" frameborder="0" class="web3">
+            </iframe>
+          </p>
+        </div>
+      </section>
 
-      </div>
     </div>
-    <script type="module" src="/main.js"></script>
-  </body>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>

@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import $ from "jquery";
 
 import Sizes from "./Utils/Sizes.js";
 import Time from "./Utils/Time.js";
@@ -13,12 +14,18 @@ import Preloader from "./Preloader.js";
 import World from "./World/World.js";
 import Controls from "./World/Controls.js";
 
+import LanguageSwitcher from "./LanguageSwitcher.js";
+import StringLoader from "./StringLoader.js";
+
 export default class Experience {
     static instance;
+
     constructor(canvas) {
         if (Experience.instance) {
             return Experience.instance;
         }
+
+        
         Experience.instance = this;
         this.canvas = canvas;
         this.scene = new THREE.Scene();
@@ -28,11 +35,20 @@ export default class Experience {
         this.renderer = new Renderer();
         this.resources = new Resources(assets);
         this.theme = new Theme();
+        
         this.world = new World();
+        this.LanguageSwitcher = new LanguageSwitcher();
         this.preloader = new Preloader();
+        
+
+        
 
         this.preloader.on("enablecontrols", () => {
             this.controls = new Controls();
+            this.stringLoader = new StringLoader();
+            this.stringLoader.on("language_switch", (lang) =>{
+                this.LanguageSwitcher.setLanguage(lang);
+                this.stringLoader.update();})
         });
 
         this.sizes.on("resize", () => {
@@ -58,4 +74,5 @@ export default class Experience {
             this.controls.update();
         }
     }
+    
 }

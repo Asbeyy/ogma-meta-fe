@@ -21,3 +21,5 @@ export default class Time extends EventEmitter {
         window.requestAnimationFrame(() => this.update());
     }
 }
+
+

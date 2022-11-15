@@ -1,0 +1,67 @@
+{
+    "logo": "OGMA",
+    "yachtClub" : "YachtClub",
+
+    "preloaderTextStart" : "start" ,
+    "preloaderBoardingYacht" : "Boarding your Yacht",
+
+
+    "perloaderMusic" :"music",
+    "preloaderNoMusic" : "no music",
+
+    "navBarTitle" : "OGMA",
+    "navBarHome" :"HOME",
+    "navBarTwo" : "ABOUT",
+    "navBarThree" : "CONTACT",
+
+    "heroOwnTheYacht" : "Own the yacht",
+    "heroLiveFreedom" : "Live the Freedom",
+
+   
+
+    "sectionOneTitle"  : "The Club",
+    "sectionOneHeader_one" :"Introduction",
+    "sectionOneH1Text_one" : "As the first of its kind, Ogma is focused around yacht ownership and service utility. Our members can use and enjoy our club, converting a typical membership into an asset.",
+    "sectionOneH1Text_listItem1" : "Members can lease or resell their membership",
+    "sectionOneH1Text_listItem2" : "Payment for food and beverage will be in USD",
+    "sectionOneH1Text_two" : "As the first of its kind, Ogma is focused around yacht ownership and service utility. Our members can use and enjoy our club, converting a typical membership into an asset.",
+    "sectionOneHeader_two" : "Why an NFT?",
+    "sectionOneH2Text_one" : "As an NFT, yacht and the membership become an asset to the token holder, which can later be sold, transferred or leased to others on the secondary market. By utilizing NFT's, OGMA is able to create a secure yacht ownership, cost reduction for it's owners, create a loyal, member-community that we can provide special experiences for. NFT's create new modernistic financial models, which will allow OGMA to deliver an exceptional and sustainable product for years to come.",
+    "sectionOneHeader_three" : "Breakdown",
+    "sectionOneH3Text_one" : "all the assets to yacht club, or the yacht itself are purchased with a cryptocurrency called Ether (ETH)",
+    
+    "sectionOneH3_ethQuestionOne" :"What is ETH and how do I get it?",
+    "sectionOneH3_ethAnswerOne" :"ETH is the cryptocurrency of Ethereum.",
+
+    "sectionOneH3_ethQuestionTwo" :"Why can't I purchase it with EUR via my credit/debit card?",
+    "sectionOneH3_ethAnswerTwo" :"You will need a private hot wallet to receive your membership token. Explained in detail below",
+
+    "sectionOneH3Text_two" : "The Yacht and the membershipis in the form of a Non-Fungible Token (NFT). It will be available on our website in January 2023.",
+
+    "sectionOneH3_q1" : "What is an NFT?",
+    "sectionOneH3_q2" : "What is hot wallet?",
+    "sectionOneH3_q3" : "Why do I need a hot wallet? Can't I just transfer money from my account from a crypto-exchange?",
+
+    "sectionOneH3_a1" : "A non-fungible token is a unique and non-interchangeable unit of data stored on a digital ledger. NFTs can be used to represent easily-reproducible items such as photos, videos, audio, and other types of digital files as unique items, and use blockchain technology to establish a verified and public proof of ownership",
+    "sectionOneH3_a2" : "A hot wallet refers to a virtual currency wallet that is accessible online, and it facilitates cryptocurrency transactions between the owner and end-users. A collection of private keys stored on a program connected to the internet is used to store and send different currencies such as Etherium, Bitcoin, etc. There are two wallets you will need. One to purchase the cryptocurrency ETH (we recommend Coinbase) and the other to purchase the NFT (we recommend Metamask).",
+    "sectionOneH3_a3" : "Hot wallets is how you would store NFTs. When you buy ETH from an exchange, the ETH is often stored in an account balance for you. These account balances might not be set up to receive NFTs if you use it to send funds.",
+    
+    "sectionOneH3Text_three" : "After the purchase is successful, the shares of your yacht in NFT will be automatically transferred into your hot wallet.",
+    "sectionOneH3Text_four" :"Once you own at least one share of the Yacht and it's digital certificate NFT, you will be able to book the use of your yacht on our website. Non-token holders will not have the ability to make reservations or use the yacht in any way. This is an extremely exclusive club.",
+
+    
+
+    "sectionTwoTitle" : "How it works",
+    "sectionTwoHeader_one": "Introduction",
+    "sectionTwoH1Text_one" : "As the first of its kind, Ogma is focused around yacht ownership and service utility. Our members can use and enjoy our club, converting a typical membership into an asset.",
+    "sectionTwoH1ListItem1" : "Members can lease or resell their membership",
+    "sectionTwoH1ListItem2" : "Payment for food and beverage will be in USD",
+    "sectionTwoH1Text_two" : "As the first of its kind, Ogma is focused around yacht ownership and service utility. Our members can use and enjoy our club, converting a typical membership into an asset.",
+
+    "sectionTwoHeader_two" : "Why an NFT?",
+    "sectionTwoH2Text_one" : "As an NFT, yacht and the membership become an asset to the token holder, which can later be sold, transferred or leased to others on the secondary market. By utilizing NFT's, OGMA is able to create a secure yacht ownership, cost reduction for it's owners, create a loyal, member-community that we can provide special experiences for. NFT's create new modernistic financial models, which will allow OGMA to deliver an exceptional and sustainable product for years to come.",
+    
+    "sectionTwoHeader_three" : "Breakdown",
+    "sectionTwoH3_underImageText1" : "all the assets to yacht club, or the yacht itself are purchased with a cryptocurrency called Ether (ETH)"
+
+}
