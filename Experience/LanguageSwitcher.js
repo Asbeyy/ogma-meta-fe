@@ -26,4 +26,7 @@ export default class LanguageSwitcher   {
       return dataStore;
      }
 
+     setLanguage(lang){
+        localStorage.setItem("language", lang)
+     }
 }

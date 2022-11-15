@@ -19,9 +19,15 @@ export default class Preloader extends EventEmitter {
         });
 
         this.world.on("worldready", () => {
+            //this.setAssetLanguageText();
             this.setAssets();
             this.playIntro();
         });
+    }
+
+    setAssetLanguageText(){
+        document.getElementById("introTextBoarding").innerText = this.experience.LanguageSwitcher.language.preloaderBoardingYacht;
+        document.getElementById("buttonStartPreload").innerText = this.experience.LanguageSwitcher.language.preloaderTextStart;
     }
 
     setAssets() {

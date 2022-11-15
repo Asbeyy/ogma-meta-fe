@@ -13,6 +13,9 @@ import Preloader from "./Preloader.js";
 import World from "./World/World.js";
 import Controls from "./World/Controls.js";
 
+import LanguageSwitcher from "./LanguageSwitcher.js";
+import StringLoader from "./StringLoader.js";
+
 export default class Experience {
     static instance;
     constructor(canvas) {
@@ -29,10 +32,15 @@ export default class Experience {
         this.resources = new Resources(assets);
         this.theme = new Theme();
         this.world = new World();
+        this.LanguageSwitcher = new LanguageSwitcher();
         this.preloader = new Preloader();
 
         this.preloader.on("enablecontrols", () => {
             this.controls = new Controls();
+            this.stringLoader = new StringLoader();
+            this.stringLoader.on("language_switch", (lang) =>{
+                this.LanguageSwitcher.setLanguage(lang);
+                this.stringLoader.update();})
         });
 
         this.sizes.on("resize", () => {
