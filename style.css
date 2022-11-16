@@ -254,6 +254,54 @@ svg{
   border-radius: 11px;
 }
 
+.immagine-due{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  height: 100%;
+  width: 100%;
+  border-radius: 11px;
+  border-style: solid;
+}
+
+.separatore{
+  height: 10px;
+  width: 100%;
+  background-color: #000000;
+}
+
+.click-here-bt{
+height: 55px;
+width: 250px;
+border-radius: 30px;
+border-width: 1px;
+font-size: 17px;
+background-color: DodgerBlue;
+border: none;
+color: white;
+padding: 12px 30px;
+cursor: pointer;
+margin-top: -45px;
+display: flex;
+align-items: center; 
+justify-content: center;
+margin-top: -35px;
+
+}
+
+
+
+.click-here-bt:hover{
+  scale: 0.9;
+}
+
+.chbt{
+width: 100%;
+height: 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
 .bottone{
   height: 40%;
   width: 40%;
@@ -274,6 +322,11 @@ svg{
 .bottone:hover{
   animation: wiggle 0.5s linear infinite;
   background-color: #a39999;
+}
+
+.web3-wallet{
+  display: flex;
+  justify-content: center;
 }
 
 /* Keyframes */
@@ -437,6 +490,37 @@ margin-top: 65px ;
   color: var(--color-text);
 }
 
+.section-heading-three{
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.8;
+  margin-top: 15px;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.section-listing{
+  width: 500px;
+  height: 300px;
+  display: inline-block;
+  position: relative;
+  left: calc(50% - 200px);
+}
+
+
+.section-listing-costs{
+    width: 300px;
+    height: 345px;
+    display: inline-block;
+    position: relative;
+    left: calc(50% - 150px);
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: 400;
+    border-radius: 15px;
+    background-color: #0000000e;
+  }
+
 .section-list{
   font-size: 18px;
   font-weight: 700;
@@ -489,6 +573,16 @@ border-radius: 35px;
   z-index: 5;
   text-transform: uppercase;
   color: var(--color-pink);
+}
+
+.section-text-three {
+  font-size: 23px;
+  font-weight: 100;
+  line-height: 1.8;
+  margin-bottom: 50px;
+  margin-top: 5px;
+  color:var(--color-text);
+  text-align: center;
 }
 
 .styleOne,
@@ -614,6 +708,10 @@ border-radius: 35px;
 }
 
 
+/* Image Slider */
+
+
+
 
 /* Media Queries */
 
@@ -671,7 +769,23 @@ border-radius: 35px;
   .bottone{
 
   }
+
+  .section-text-three{
+    margin-top: 40px;
+  }
+
+  .section-heading{
+    text-align: center;
+  }
+
+  .section-listing{
+    width: 300px;
+    left: calc(50% - 150px);
+    scale: 0.9;
+  }
 }
+
+
 
 
 
