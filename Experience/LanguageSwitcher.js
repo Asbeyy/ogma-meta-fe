@@ -13,7 +13,7 @@ export default class LanguageSwitcher   {
 
     getLanguage() {
         var dataStore;
-        localStorage.getItem('language') == null ? setLanguage('en') : false;
+        localStorage.getItem('language') == null ? this.setLanguage('en') : false;
          $.ajax({ 
              url:  '/Experience/Language/' +  localStorage.getItem('language') + '.json', 
              dataType: 'json', async: false ,
