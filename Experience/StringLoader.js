@@ -36,7 +36,7 @@ export default class StringLoader extends EventEmitter{
     }
 
     assignNavBar(){
-        document.getElementById("navBarTitle").innerText = this.experience.LanguageSwitcher.language.navBarTitle;
+        document.getElementById("navBarTitle").textContent = this.experience.LanguageSwitcher.language.navBarTitle;
         document.getElementById("navBarHome").innerText = this.experience.LanguageSwitcher.language.navBarHome;
         document.getElementById("navBarTwo").innerText = this.experience.LanguageSwitcher.language.navBarTwo;
         document.getElementById("navBarThree").innerText = this.experience.LanguageSwitcher.language.navBarThree;
