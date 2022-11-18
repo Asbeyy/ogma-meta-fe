@@ -47,7 +47,7 @@ export default class World extends EventEmitter {
     //     }
     // }
 
-    resize() {}
+    resize() { }
 
     update() {
         if (this.room) {

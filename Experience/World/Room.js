@@ -122,9 +122,9 @@ export default class Room {
         });
     }
 
-    
 
-    resize() {}
+
+    resize() { }
 
     update() {
         this.lerp.current = GSAP.utils.interpolate(

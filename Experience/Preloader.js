@@ -27,13 +27,13 @@ export default class Preloader extends EventEmitter {
         });
     }
 
-    setAssetLanguageText(){
+    setAssetLanguageText() {
         document.getElementById("introTextBoarding").innerText = this.experience.LanguageSwitcher.language.preloaderBoardingYacht;
         document.getElementById("perloaderMusic").innerText = this.experience.LanguageSwitcher.language.perloaderMusic;
         document.getElementById("preloaderNoMusic").innerText = this.experience.LanguageSwitcher.language.preloaderNoMusic;
     }
 
-    setNavBarLanguageText(){
+    setNavBarLanguageText() {
         document.getElementById("navBarTitle").innerText = this.experience.LanguageSwitcher.language.navBarTitle;
         document.getElementById("navBarHome").innerText = this.experience.LanguageSwitcher.language.navBarHome;
         document.getElementById("navBarTwo").innerText = this.experience.LanguageSwitcher.language.navBarTwo;
@@ -277,7 +277,7 @@ export default class Preloader extends EventEmitter {
                     ">-0.4"
                 )
 
-                
+
                 .to(
                     this.roomChildren.floor_items.scale,
                     {

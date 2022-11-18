@@ -25,7 +25,7 @@ export default class Experience {
             return Experience.instance;
         }
 
-        
+
         Experience.instance = this;
         this.canvas = canvas;
         this.scene = new THREE.Scene();
@@ -35,20 +35,21 @@ export default class Experience {
         this.renderer = new Renderer();
         this.resources = new Resources(assets);
         this.theme = new Theme();
-        
+
         this.world = new World();
         this.LanguageSwitcher = new LanguageSwitcher();
         this.preloader = new Preloader();
-        
 
-        
+
+
 
         this.preloader.on("enablecontrols", () => {
             this.controls = new Controls();
             this.stringLoader = new StringLoader();
-            this.stringLoader.on("language_switch", (lang) =>{
+            this.stringLoader.on("language_switch", (lang) => {
                 this.LanguageSwitcher.setLanguage(lang);
-                this.stringLoader.update();})
+                this.stringLoader.update();
+            })
         });
 
         this.sizes.on("resize", () => {
@@ -74,5 +75,5 @@ export default class Experience {
             this.controls.update();
         }
     }
-    
+
 }

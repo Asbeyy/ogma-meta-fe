@@ -461,7 +461,7 @@ export default class Controls {
             },
         });
     }
-    resize() {}
+    resize() { }
 
-    update() {}
+    update() { }
 }
