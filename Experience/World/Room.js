@@ -1,7 +1,6 @@
 import * as THREE from "three";
 import Experience from "../Experience.js";
 import GSAP from "gsap";
-import { RectAreaLightHelper } from "three/examples/jsm/helpers/RectAreaLightHelper.js";
 
 export default class Room {
     constructor() {
@@ -113,7 +112,78 @@ export default class Room {
         this.swim.play();
     }
 
-    tilt(event) {
+
+    //mouse rotation
+
+    onMouseMove() {
+        window.addEventListener("mousemove", (e) => {
+            this.rotation =
+                ((e.clientX - window.innerWidth / 2) * 8) / window.innerWidth; //*2 standard
+            this.lerp.target = this.rotation * 0.15; //*0.05 standard
+        });
+    }
+
+
+    // GYROSCOPE AND HELPER FUNCTIONS
+    onGyroDetected() {
+        if (window.DeviceOrientationEvent) {
+            console.log("add device 1 orientation listener");
+
+           this.gyroDeviceOrientationSetup();
+        }
+
+
+        else if (window.DeviceMotionEvent) {
+            console.log("add device  2 orientation listener");
+            this.gyroDeviceMotionSetup();
+            }
+        
+    }
+
+
+    gyroDeviceOrientationSetup(){
+        if (this.experience.sizes.device == 'mobile') {
+            var button = document.getElementById("perloaderMusic");
+            button.addEventListener('click', function () {
+                DeviceOrientationEvent.requestPermission()
+                    .then(response => {
+                        if (response == 'granted') {
+                            window.addEventListener("deviceorientation", (e) => {
+                                tilt(e);
+                            });
+                        }
+                    })
+            });
+        }
+        else {
+            window.addEventListener("deviceorientation", (e) => {
+                this.tilt(e);
+            });
+        }
+    }
+
+    gyroDeviceMotionSetup(){
+        if (this.experience.sizes.device == 'mobile') {
+            var button = document.getElementById("perloaderMusic");
+            button.addEventListener('click', function () {
+                DeviceOrientationEvent.requestPermission()
+                    .then(response => {
+                        if (response == 'granted') {
+                            window.addEventListener("deviceorientation", (e) => {
+                                tilt(e);
+                            });
+                        }
+                    })
+            });
+        }
+        else {
+            window.addEventListener("deviceorientation", (e) => {
+                this.tilt(e);
+            });
+        }
+    }
+
+    tilt(e) {
         let x = e.alpha;
         let slope = 8 / 90;
 
@@ -126,55 +196,6 @@ export default class Room {
 
         this.rotation = (-4) + (slope * (x - -90));
         this.lerp.target = this.rotation * 0.015;
-    }
-
-    //mouse rotation
-
-    onMouseMove() {
-        window.addEventListener("mousemove", (e) => {
-            this.rotation =
-                ((e.clientX - window.innerWidth / 2) * 8) / window.innerWidth; //*2 standard
-            this.lerp.target = this.rotation * 0.15; //*0.05 standard
-        });
-    }
-
-    onGyroDetected() {
-        if (window.DeviceOrientationEvent) {
-            console.log("add device 1 orientation listener");
-            window.addEventListener("deviceorientation", (e) => {
-                let x = e.alpha;
-                let slope = 8 / 90;
-
-                if (x > 0 && x < 200) {
-                    this.rotation = (-4) + (slope * (-x - -90));
-                }
-                else {
-                    this.rotation = (-4) + (slope * (x - -90));
-                }
-
-                this.rotation = (-4) + (slope * (x - -90));
-                this.lerp.target = this.rotation * 0.015;
-            });
-        }
-
-
-        else if (window.DeviceMotionEvent) {
-            console.log("add device  2 orientation listener");
-            window.addEventListener("deviceorientation", (e) => {
-                let x = e.alpha;
-                let slope = 8 / 90;
-
-                if (x > 0 && x < 200) {
-                    this.rotation = (-4) + (slope * (-x - -90));
-                }
-                else {
-                    this.rotation = (-4) + (slope * (x - -90));
-                }
-
-                this.rotation = (-4) + (slope * (x - -90));
-                this.lerp.target = this.rotation * 0.015;
-            })
-        }
     }
 
 
