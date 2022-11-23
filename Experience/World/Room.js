@@ -22,6 +22,7 @@ export default class Room {
         this.setModel();
         this.setAnimation();
         this.onMouseMove();
+        this.onGyroDetected();
     }
 
     setModel() {
@@ -112,6 +113,21 @@ export default class Room {
         this.swim.play();
     }
 
+    tilt(event) {
+        let x = e.alpha;
+        let slope = 8 / 90;
+
+        if (x > 0 && x < 200) {
+            this.rotation = (-4) + (slope * (-x - -90));
+        }
+        else {
+            this.rotation = (-4) + (slope * (x - -90));
+        }
+
+        this.rotation = (-4) + (slope * (x - -90));
+        this.lerp.target = this.rotation * 0.015;
+    }
+
     //mouse rotation
 
     onMouseMove() {
@@ -120,6 +136,45 @@ export default class Room {
                 ((e.clientX - window.innerWidth / 2) * 8) / window.innerWidth; //*2 standard
             this.lerp.target = this.rotation * 0.15; //*0.05 standard
         });
+    }
+
+    onGyroDetected() {
+        if (window.DeviceOrientationEvent) {
+            console.log("add device 1 orientation listener");
+            window.addEventListener("deviceorientation", (e) => {
+                let x = e.alpha;
+                let slope = 8 / 90;
+
+                if (x > 0 && x < 200) {
+                    this.rotation = (-4) + (slope * (-x - -90));
+                }
+                else {
+                    this.rotation = (-4) + (slope * (x - -90));
+                }
+
+                this.rotation = (-4) + (slope * (x - -90));
+                this.lerp.target = this.rotation * 0.015;
+            });
+        }
+
+
+        else if (window.DeviceMotionEvent) {
+            console.log("add device  2 orientation listener");
+            window.addEventListener("deviceorientation", (e) => {
+                let x = e.alpha;
+                let slope = 8 / 90;
+
+                if (x > 0 && x < 200) {
+                    this.rotation = (-4) + (slope * (-x - -90));
+                }
+                else {
+                    this.rotation = (-4) + (slope * (x - -90));
+                }
+
+                this.rotation = (-4) + (slope * (x - -90));
+                this.lerp.target = this.rotation * 0.015;
+            })
+        }
     }
 
 
