@@ -58,26 +58,9 @@ export default class Camera {
     }
 
     setOrbitControls() {
-    //     this.controls = new OrbitControls(this.perspectiveCamera, this.canvas);
-    //     this.controls.enableDamping = true;
-    //     this.controls.enableZoom = false;
-    
-        this.controls = new OrbitControls( this.perspectiveCamera, this.canvas) ;
-
-            this.controls.tiltEnabled = true ;  // default is false.  You need to turn this on to control with the gyro sensor.
-
-            this.controls.minPolarAngle = Math.PI * 0.4; // radians
-            this.controls.maxPolarAngle = Math.PI * 0.6; // radians
-            this.controls.noZoom = true ;
-
-            // How far you can rotate on the horizontal axis, upper and lower limits.
-            // If set, must be a sub-interval of the interval [ - Math.PI, Math.PI ].
-            this.controls.minAzimuthAngle = - Math.PI * 0.1; // radians
-            this.controls.maxAzimuthAngle = Math.PI * 0.1; // radians
-            console.log(this.scene.children);
-
-            // this.UMLogo = this.scene.children[0];
-            this.controls.target = this.scene.children[0].position;
+        this.controls = new OrbitControls(this.perspectiveCamera, this.canvas);
+        this.controls.enableDamping = true;
+        this.controls.enableZoom = false;
     }
 
     resize() {
