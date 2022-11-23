@@ -129,31 +129,27 @@ export default class Room {
         if (window.DeviceOrientationEvent) {
             console.log("add device 1 orientation listener");
 
-           this.gyroDeviceOrientationSetup();
+            this.gyroDeviceOrientationSetup();
         }
 
 
         else if (window.DeviceMotionEvent) {
             console.log("add device  2 orientation listener");
             this.gyroDeviceMotionSetup();
-            }
-        
+        }
+
     }
 
 
-    gyroDeviceOrientationSetup(){
+    gyroDeviceOrientationSetup() {
         if (this.experience.sizes.device == 'mobile') {
+
+            // if (location.protocol != "https:") {
+            //     location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+            // }
+
             var button = document.getElementById("perloaderMusic");
-            button.addEventListener('click', function () {
-                DeviceOrientationEvent.requestPermission()
-                    .then(response => {
-                        if (response == 'granted') {
-                            window.addEventListener("deviceorientation", (e) => {
-                                tilt(e);
-                            });
-                        }
-                    })
-            });
+            button.addEventListener("click", this.askGyroPermission);
         }
         else {
             window.addEventListener("deviceorientation", (e) => {
@@ -162,19 +158,15 @@ export default class Room {
         }
     }
 
-    gyroDeviceMotionSetup(){
+    gyroDeviceMotionSetup() {
         if (this.experience.sizes.device == 'mobile') {
+
+            // if (location.protocol != "https:") {
+            //     location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+            // }
+
             var button = document.getElementById("perloaderMusic");
-            button.addEventListener('click', function () {
-                DeviceOrientationEvent.requestPermission()
-                    .then(response => {
-                        if (response == 'granted') {
-                            window.addEventListener("deviceorientation", (e) => {
-                                tilt(e);
-                            });
-                        }
-                    })
-            });
+            button.addEventListener("click", permission);
         }
         else {
             window.addEventListener("deviceorientation", (e) => {
@@ -197,6 +189,24 @@ export default class Room {
         this.rotation = (-4) + (slope * (x - -90));
         this.lerp.target = this.rotation * 0.015;
     }
+
+    askGyroPermission() {
+        if (typeof (window.DeviceMotionEvent) !== "undefined" && typeof (window.DeviceMotionEvent.requestPermission) === "function") {
+            window.DeviceMotionEvent.requestPermission()
+                .then(response => {
+                    window.alert(response);
+                    if (response == "granted") {
+                        window.addEventListener("devicemotion", (e) => {
+                            this.tilt(e);
+                        })
+                    }
+                })
+                .catch(console.error)
+        } else {
+            alert("DeviceMotionEvent is not defined");
+        }
+    }
+
 
 
 
