@@ -149,7 +149,9 @@ export default class Room {
             // }
 
             var button = document.getElementById("perloaderMusic");
+            var button2 = document.getElementById("preloaderNoMusic");
             button.addEventListener("click", this.askGyroPermission);
+            button2.addEventListener("click", this.askGyroPermission);
         }
         else {
             window.addEventListener("deviceorientation", (e) => {
@@ -169,18 +171,19 @@ export default class Room {
             button.addEventListener("click", permission);
         }
         else {
-            window.addEventListener("deviceorientation", (e) => {
+            window.addEventListener("devicemotion", (e) => {
                 this.tilt(e);
             });
         }
     }
 
     tilt(e) {
+        // window.alert('tilting');
         let x = e.alpha;
         let slope = 8 / 90;
 
-        if (x > 0 && x < 200) {
-            this.rotation = (-4) + (slope * (-x - -90));
+        if (x > 90 && x < 200) {
+            this.rotation = (-4) + (slope * ((x+180) - -90));
         }
         else {
             this.rotation = (-4) + (slope * (x - -90));
