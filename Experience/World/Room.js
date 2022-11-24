@@ -4,6 +4,9 @@ import GSAP from "gsap";
 import iOSDetector from '../Utils/detector.js';
 
 export default class Room {
+
+
+
     constructor() {
         this.experience = new Experience();
         this.scene = this.experience.scene;
@@ -128,21 +131,16 @@ export default class Room {
     // GYROSCOPE AND HELPER FUNCTIONS
     onGyroDetected() {
         if (window.DeviceOrientationEvent) {
-            console.log("add device 1 orientation listener");
-
             this.gyroDeviceOrientationSetup();
         }
-
-
         else if (window.DeviceMotionEvent) {
-            console.log("add device  2 orientation listener");
             this.gyroDeviceMotionSetup();
         }
-
     }
 
 
     gyroDeviceOrientationSetup() {
+        var eventType = "deviceorientation";
         var isIos = iOSDetector();
         if (this.experience.sizes.device == 'mobile' && isIos) {
 
@@ -164,14 +162,23 @@ export default class Room {
     }
 
     gyroDeviceMotionSetup() {
-        if (this.experience.sizes.device == 'mobile') {
+        var eventType = "devicemotion";
+        var isIos = iOSDetector();
+        if (this.experience.sizes.device == 'mobile' && isIos) {
 
             if (location.protocol != "https:") {
                 location.href = "https:" + window.location.href.substring(window.location.protocol.length);
             }
 
             var button = document.getElementById("perloaderMusic");
-            button.addEventListener("click", permission);
+            var button2 = document.getElementById("preloaderNoMusic");
+            var instanceThis = this;
+
+
+
+
+            button.addEventListener("click", this.askGyroPermission(instanceThis));
+            button2.addEventListener("click", this.askGyroPermission(instanceThis));
         }
         else {
             window.addEventListener("devicemotion", (e) => {
@@ -180,24 +187,44 @@ export default class Room {
         }
     }
 
-    askGyroPermission(scope) {
-        if (typeof (window.DeviceOrientationEvent) !== "undefined" && typeof (window.DeviceOrientationEvent.requestPermission) === "function") {
-            window.DeviceOrientationEvent.requestPermission()
-                .then(response => {
-                    console.log('hello');
-                    console.log(scope);
-                    if (response == "granted") {
-                        scope.addTiltEventListener();
-                    }
-                })
-                .catch(console.error)
-        } else {
-            alert("DeviceMotionEvent is not defined");
+    askGyroPermission(scope, eventType) {
+        if (eventType == "deviceorientation") {
+            if (typeof (window.DeviceOrientationEvent) !== "undefined" && typeof (window.DeviceOrientationEvent.requestPermission) === "function") {
+                window.DeviceOrientationEvent.requestPermission()
+                    .then(response => {
+                        if (response == "granted") {
+                            scope.addTiltEventListener();
+                        }
+                    })
+                    .catch(console.error)
+            } else {
+                alert("DeviceMotionEvent is not defined");
+            }
+        }
+
+        else if(eventType == "devicemotion"){
+            if (typeof (window.DeviceMotionEvent) !== "undefined" && typeof (window.DeviceMotionEvent.requestPermission) === "function") {
+                window.DeviceMotionEvent.requestPermission()
+                    .then(response => {
+                        if (response == "granted") {
+                            scope.addTiltMotionEventListener();
+                        }
+                    })
+                    .catch(console.error)
+            } else {
+                alert("DeviceMotionEvent is not defined");
+            }
         }
     }
 
-    addTiltEventListener() {
+    addTiltOrientationEventListener() {
         window.addEventListener("deviceorientation", (e) => {
+            this.tilt(e);
+        })
+    }
+
+    addTiltMotionEventListener(){
+        window.addEventListener("devicemotion", (e) => {
             this.tilt(e);
         })
     }
@@ -221,7 +248,6 @@ export default class Room {
             console.log("big crash");
         }
     }
-
 
     resize() { }
 
