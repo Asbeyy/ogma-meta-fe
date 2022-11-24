@@ -140,19 +140,17 @@ export default class Room {
 
 
     gyroDeviceOrientationSetup() {
-        var eventType = "deviceorientation";
         var isIos = iOSDetector();
         if (this.experience.sizes.device == 'mobile' && isIos) {
 
             if (location.protocol != "https:") {
                 location.href = "https:" + window.location.href.substring(window.location.protocol.length);
             }
-
             var button = document.getElementById("perloaderMusic");
             var button2 = document.getElementById("preloaderNoMusic");
             var instanceThis = this;
-            button.addEventListener("click", this.askGyroPermission(instanceThis));
-            button2.addEventListener("click", this.askGyroPermission(instanceThis));
+            button.addEventListener("click", function(){instanceThis.askGyroPermission(instanceThis,"deviceorientation");});
+            button2.addEventListener("click", function(){instanceThis.askGyroPermission(instanceThis,"deviceorientation");});
         }
         else {
             window.addEventListener("deviceorientation", (e) => {
@@ -162,7 +160,6 @@ export default class Room {
     }
 
     gyroDeviceMotionSetup() {
-        var eventType = "devicemotion";
         var isIos = iOSDetector();
         if (this.experience.sizes.device == 'mobile' && isIos) {
 
@@ -173,12 +170,8 @@ export default class Room {
             var button = document.getElementById("perloaderMusic");
             var button2 = document.getElementById("preloaderNoMusic");
             var instanceThis = this;
-
-
-
-
-            button.addEventListener("click", this.askGyroPermission(instanceThis));
-            button2.addEventListener("click", this.askGyroPermission(instanceThis));
+            button.addEventListener("click", function(){instanceThis.askGyroPermission(instanceThis,"devicemotion");});
+            button2.addEventListener("click", function(){instanceThis.askGyroPermission(instanceThis,"devicemotion");});
         }
         else {
             window.addEventListener("devicemotion", (e) => {
@@ -193,7 +186,7 @@ export default class Room {
                 window.DeviceOrientationEvent.requestPermission()
                     .then(response => {
                         if (response == "granted") {
-                            scope.addTiltEventListener();
+                            scope.addTiltOrientationEventListener();
                         }
                     })
                     .catch(console.error)
