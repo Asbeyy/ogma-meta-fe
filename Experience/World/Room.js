@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import Experience from "../Experience.js";
 import GSAP from "gsap";
+import iOSDetector from '../Utils/detector.js';
 
 export default class Room {
     constructor() {
@@ -142,16 +143,18 @@ export default class Room {
 
 
     gyroDeviceOrientationSetup() {
-        if (this.experience.sizes.device == 'mobile') {
+        var isIos = iOSDetector();
+        if (this.experience.sizes.device == 'mobile' && isIos) {
 
-            // if (location.protocol != "https:") {
-            //     location.href = "https:" + window.location.href.substring(window.location.protocol.length);
-            // }
+            if (location.protocol != "https:") {
+                location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+            }
 
             var button = document.getElementById("perloaderMusic");
             var button2 = document.getElementById("preloaderNoMusic");
-            button.addEventListener("click", this.askGyroPermission);
-            button2.addEventListener("click", this.askGyroPermission);
+            var instanceThis = this;
+            button.addEventListener("click", this.askGyroPermission(instanceThis));
+            button2.addEventListener("click", this.askGyroPermission(instanceThis));
         }
         else {
             window.addEventListener("deviceorientation", (e) => {
@@ -163,9 +166,9 @@ export default class Room {
     gyroDeviceMotionSetup() {
         if (this.experience.sizes.device == 'mobile') {
 
-            // if (location.protocol != "https:") {
-            //     location.href = "https:" + window.location.href.substring(window.location.protocol.length);
-            // }
+            if (location.protocol != "https:") {
+                location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+            }
 
             var button = document.getElementById("perloaderMusic");
             button.addEventListener("click", permission);
@@ -177,31 +180,14 @@ export default class Room {
         }
     }
 
-    tilt(e) {
-        // window.alert('tilting');
-        let x = e.alpha;
-        let slope = 8 / 90;
-
-        if (x > 90 && x < 200) {
-            this.rotation = (-4) + (slope * ((x+180) - -90));
-        }
-        else {
-            this.rotation = (-4) + (slope * (x - -90));
-        }
-
-        this.rotation = (-4) + (slope * (x - -90));
-        this.lerp.target = this.rotation * 0.015;
-    }
-
-    askGyroPermission() {
-        if (typeof (window.DeviceMotionEvent) !== "undefined" && typeof (window.DeviceMotionEvent.requestPermission) === "function") {
-            window.DeviceMotionEvent.requestPermission()
+    askGyroPermission(scope) {
+        if (typeof (window.DeviceOrientationEvent) !== "undefined" && typeof (window.DeviceOrientationEvent.requestPermission) === "function") {
+            window.DeviceOrientationEvent.requestPermission()
                 .then(response => {
-                    window.alert(response);
+                    console.log('hello');
+                    console.log(scope);
                     if (response == "granted") {
-                        window.addEventListener("devicemotion", (e) => {
-                            this.tilt(e);
-                        })
+                        scope.addTiltEventListener();
                     }
                 })
                 .catch(console.error)
@@ -210,7 +196,31 @@ export default class Room {
         }
     }
 
+    addTiltEventListener() {
+        window.addEventListener("deviceorientation", (e) => {
+            this.tilt(e);
+        })
+    }
 
+    tilt(e) {
+        try {
+            let x = e.alpha;
+            let slope = 8 / 90;
+
+            if (x > 90 && x < 200) {
+                this.rotation = (-4) + (slope * ((x + 180) - -90));
+            }
+            else {
+                this.rotation = (-4) + (slope * (x - -90));
+            }
+
+            this.rotation = (-4) + (slope * (x - -90));
+            this.lerp.target = this.rotation * 0.015;
+        }
+        catch {
+            console.log("big crash");
+        }
+    }
 
 
     resize() { }
