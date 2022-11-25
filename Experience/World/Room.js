@@ -149,8 +149,8 @@ export default class Room {
             var button = document.getElementById("perloaderMusic");
             var button2 = document.getElementById("preloaderNoMusic");
             var instanceThis = this;
-            button.addEventListener("click", function(){instanceThis.askGyroPermission(instanceThis,"deviceorientation");});
-            button2.addEventListener("click", function(){instanceThis.askGyroPermission(instanceThis,"deviceorientation");});
+            button.addEventListener("click", function () { instanceThis.askGyroPermission(instanceThis, "deviceorientation"); });
+            button2.addEventListener("click", function () { instanceThis.askGyroPermission(instanceThis, "deviceorientation"); });
         }
         else {
             window.addEventListener("deviceorientation", (e) => {
@@ -170,8 +170,8 @@ export default class Room {
             var button = document.getElementById("perloaderMusic");
             var button2 = document.getElementById("preloaderNoMusic");
             var instanceThis = this;
-            button.addEventListener("click", function(){instanceThis.askGyroPermission(instanceThis,"devicemotion");});
-            button2.addEventListener("click", function(){instanceThis.askGyroPermission(instanceThis,"devicemotion");});
+            button.addEventListener("click", function () { instanceThis.askGyroPermission(instanceThis, "devicemotion"); });
+            button2.addEventListener("click", function () { instanceThis.askGyroPermission(instanceThis, "devicemotion"); });
         }
         else {
             window.addEventListener("devicemotion", (e) => {
@@ -195,7 +195,7 @@ export default class Room {
             }
         }
 
-        else if(eventType == "devicemotion"){
+        else if (eventType == "devicemotion") {
             if (typeof (window.DeviceMotionEvent) !== "undefined" && typeof (window.DeviceMotionEvent.requestPermission) === "function") {
                 window.DeviceMotionEvent.requestPermission()
                     .then(response => {
@@ -216,7 +216,7 @@ export default class Room {
         })
     }
 
-    addTiltMotionEventListener(){
+    addTiltMotionEventListener() {
         window.addEventListener("devicemotion", (e) => {
             this.tilt(e);
         })
@@ -224,18 +224,10 @@ export default class Room {
 
     tilt(e) {
         try {
-            let x = e.alpha;
-            let slope = 8 / 90;
-
-            if (x > 90 && x < 200) {
-                this.rotation = (-4) + (slope * ((x + 180) - -90));
-            }
-            else {
-                this.rotation = (-4) + (slope * (x - -90));
-            }
-
-            this.rotation = (-4) + (slope * (x - -90));
-            this.lerp.target = this.rotation * 0.015;
+            let x = e.gamma;
+            let slope = 8 / 100;
+            this.rotation = (-4) + (slope * (x - -100));
+            this.lerp.target = this.rotation * 0.055;
         }
         catch {
             console.log("big crash");
