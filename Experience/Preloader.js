@@ -19,9 +19,24 @@ export default class Preloader extends EventEmitter {
         });
 
         this.world.on("worldready", () => {
+            this.assignNavBar();
+            this.setAssetLanguageText();
             this.setAssets();
             this.playIntro();
         });
+    }
+
+    assignNavBar() {
+        document.getElementById("navBarTitle").textContent = this.experience.LanguageSwitcher.language.navBarTitle;
+        document.getElementById("navBarOne").textContent = this.experience.LanguageSwitcher.language.navBarOne;
+        document.getElementById("navBarTwo").textContent = this.experience.LanguageSwitcher.language.navBarTwo;
+        document.getElementById("navBarThree").textContent = this.experience.LanguageSwitcher.language.navBarThree;
+    }
+
+    setAssetLanguageText() {
+        document.getElementById("preloaderBoardingYacht").innerText = this.experience.LanguageSwitcher.language.preloaderBoardingYacht;
+        document.getElementById("preloaderMusic").innerText = this.experience.LanguageSwitcher.language.preloaderMusic;
+        document.getElementById("preloaderNoMusic").innerText = this.experience.LanguageSwitcher.language.preloaderNoMusic;
     }
 
     setAssets() {
@@ -446,7 +461,7 @@ export default class Preloader extends EventEmitter {
 
 
 
-                
+
                 .to(
                     this.roomChildren.floor_items.scale,
                     {

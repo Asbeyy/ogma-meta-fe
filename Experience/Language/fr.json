@@ -1,0 +1,106 @@
+{
+    "title" : "OGMA YACHT CLUB",
+
+    "navBarTitle": "OGMA",
+    "navBarOne": "ABOUT",
+    "navBarTwo": "HOW",
+    "navBarThree": "JOIN US",
+
+    "preloaderBoardingYacht": "Boarding your Yacht",
+    "preloaderMusic": "music 🔊",
+    "preloaderNoMusic": "no music 🔇",
+
+
+    "heroOwnTheYacht": "OWN THE YACHT",
+    "heroLiveFreedom": "LIVE THE FREEDOM",
+
+    "logo": "OGMA",
+    "yachtClub": "YachtClub",
+  
+  
+    "sectionOneTitle": "The future of Yachting",
+    "sectionOnePresentationLinkText": "CLICK THE PRESENTATION ABOVE",
+    "sectionOneH1Text_one": "Where technology meets with the highest expression of luxury and well-being. ogma is the first yacht club in the world, integrating blockchain features, to give an all inclusive service featuring:",
+    "sectionOneH1Text_listItem1": "Yacht fractionation and co-ownership",
+    "sectionOneH1Text_listItem2": "All-in-one tailormade experience",
+    "sectionOneH1Text_listItem3": "Hyper exclusive service onboard",
+    "sectionOneH1Text_listItem4": "Operation cost reduction",
+    "sectionOneH1Text_two": "Blockchain allows ogma to create an instant seamless system of yacht co-ownership, and fractionation through the use of non-fungible tokens, protected from the highest security features of this technology.",
+    "sectionOneH1Text_three": "Ogma takes care for your of operating the yacht when you need it, provide you and your guests, a tailormade exclusive service.",
+    "sectionOneH1Text_four": "Co-own a yacht or a fleet, enjoy vacations with it, drastically reduce the purchase costs and annual operational costs of owning one. The financial advantage of using our solution is complemented by assle free purchases, by instantly purchasing a share of the yacht and use it right away, without having to worry about the paperwork or running cost. Included and supported, a state of the art service on-board, provided by highly trained crew, lounges in main cities and the use of technology for customer habits recognition and service on board and within our lounges.",
+    "sectionOneH1Text_ownsupercar": "Own a Super Yacht, for the price of a car",
+   
+    "sectionOneH1Text_five": "We are not only a yacht club and a digital yacht broker, but, as we also take care of the service, the logistics and the technologies, we are challenged to redefine luxury hospitality, enhance the already high industry standards of service, within a ultra-exclusive and unique experience; complemented by blockchain usage, meaning instant purchase & transactions, extremely secure ecosystems for asset protection and transparency of operations.",
+    
+    "sectionOneH1Q_AdvantagesCoOwn": "What are the advantages of co-ownership?",
+    "sectionOneH1_answerCo1": "Use your yacht up to 6 weeks a year, private or shared.",
+    "sectionOneH1_answerCo2": "Boat and rooms always loaded to your preferences",
+    "sectionOneH1_answerCo3": "Maintenance costs included in the yearly fee",
+    "sectionOneH1_answerCo4": "No extra costs",
+
+    "sectionOneH1Q_AdvantagesBlock": "What are the advantages blockchain technology?",
+    "sectionOneH1_answer1Block": "Secure storage of assets",
+    "sectionOneH1_answer2Block": "Digital keys to access the boat",
+    "sectionOneH1_answer3Block": "Access private events world-wide",
+    "sectionOneH1_answer4Block": "Safely buy or sell instantly your share",
+
+
+    "sectionOneH2" : "Yacht Collection",
+    "sectionOneH2Text_1" : "Quality is one of ogma's priorities, that is why, the best yacht manufacturer in the world has been chosen to build the fleets of yachts, Azimut. Ogma decided to chose the elegant shapes of the Magellano collection to build a Fleet of 7 Yachs to be co-owned.",
+    "sectionOneH2Subheader1" : "Azimut Magellano 25 Collection",
+
+    "sectionOneH2Text_2": "Azimut Magellano 25 Metri combines classical good looks, masterfully designed interiors and latest generation technology the likes of which have never been seen on a yacht this size, showcasing exactly what her Italian builder is capable of",
+
+    "sectionOneH2CostAndData":"Costs & Data",
+    "sectionOneH2data1" : "Share price - 153'000",
+    "sectionOneH2data2" : "Yearly maintenance fee - 48'000",
+    "sectionOneH2data3" : "Length: 25.22 m",
+    "sectionOneH2data4" : "Beam: 6.35 m",
+    "sectionOneH2data5" : "Cabins: 4",
+    "sectionOneH2data6" : "Pax: 8",
+    "sectionOneH2data7" : "Crew: 4",
+
+    "sectionOneH2Text2":"Each share gives its owner 80 credits a year. Owners that wish to receive more credits can purchase more shares and credits will be automatically aggregated. They can be used to reserve 1 room, multiple rooms or the entire yacht. Here below the prices is credits, per week, from left to right (Exclusive season, High Season, Mid Season and Low Season)",
+    "sectionOneH2Text3" : "It is important to compare prices available on the market to quickly realize the financial advantage Ogma Yacht Club brings to Yacht Owners or Charterers. One week full privatization on a boat of the same class and type on the market ranges currently 60 '000 euro to 150' 000 euro a week. Ogma’s offers it’s owners the same amount of time for at least 50% cheaper than market offer currently, which most will not even include fuel and food, differently from our all-included services",
+
+    "sectionOneCompleteInfo":"Complete detailed Informations",
+    "sectionOneButtonClickText" : "Click Here",
+
+
+
+
+
+
+
+
+    "sectionTwoTitle": "How it works",
+    "sectionTwoHeader_one": "Introduction",
+    "sectionTwoH1Text_one": "As the first of its kind, Ogma is focused around yacht ownership and service utility. Our members can use and enjoy our club, converting a typical membership into an asset.",
+    "sectionTwoH1ListItem1": "Members can lease or resell their membership",
+    "sectionTwoH1ListItem2": "Payment for food and beverage will be in USD",
+    "sectionTwoH1Text_two": "As the first of its kind, Ogma is focused around yacht ownership and service utility. Our members can use and enjoy our club, converting a typical membership into an asset.",
+    "sectionTwoHeader_two": "Why an NFT?",
+    "sectionTwoH2Text_one": "As an NFT, yacht and the membership become an asset to the token holder, which can later be sold, transferred or leased to others on the secondary market. By utilizing NFT's, OGMA is able to create a secure yacht ownership, cost reduction for it's owners, create a loyal, member-community that we can provide special experiences for. NFT's create new modernistic financial models, which will allow OGMA to deliver an exceptional and sustainable product for years to come.",
+    "sectionTwoHeader_three": "Breakdown",
+    "sectionTwoH3_underImageText1": "all the assets to yacht club, or the yacht itself are purchased with a cryptocurrency called Ether (ETH)",
+    "sectionTwoH3_ethQuestionOne": "What is ETH and how do I get it?",
+    "sectionOneH3_ethAnswerOne": "ETH is the cryptocurrency of Ethereum.",
+    "sectionTwoH3_ethQuestionTwo": "Why can't I purchase it with EUR via my credit/debit card?",
+    "sectionTwoH3_ethAnswerTwo": "You will need a private hot wallet to receive your membership token. Explained in detail below",
+    "sectionTwoH3Text_two": "The Yacht and the membershipis in the form of a Non-Fungible Token (NFT). It will be available on our website in January 2023.",
+    "sectionTwoH3_q1": "What is an NFT?",
+    "sectionTwoH3_q2": "What is hot wallet?",
+    "sectionTwoH3_q3": "Why do I need a hot wallet? Can't I just transfer money from my account from a crypto-exchange?",
+    "sectionTwoH3_a1": "A non-fungible token is a unique and non-interchangeable unit of data stored on a digital ledger. NFTs can be used to represent easily-reproducible items such as photos, videos, audio, and other types of digital files as unique items, and use blockchain technology to establish a verified and public proof of ownership",
+    "sectionTwoH3_a2": "A hot wallet refers to a virtual currency wallet that is accessible online, and it facilitates cryptocurrency transactions between the owner and end-users. A collection of private keys stored on a program connected to the internet is used to store and send different currencies such as Etherium, Bitcoin, etc. There are two wallets you will need. One to purchase the cryptocurrency ETH (we recommend Coinbase) and the other to purchase the NFT (we recommend Metamask).",
+    "sectionTwoH3_a3": "Hot wallets is how you would store NFTs. When you buy ETH from an exchange, the ETH is often stored in an account balance for you. These account balances might not be set up to receive NFTs if you use it to send funds.",
+    "sectionTwoH3Text_three": "After the purchase is successful, the shares of your yacht in NFT will be automatically transferred into your hot wallet.",
+    "sectionTwoH3Text_four": "Once you own at least one share of the Yacht and it's digital certificate NFT, you will be able to book the use of your yacht on our website. Non-token holders will not have the ability to make reservations or use the yacht in any way. This is an extremely exclusive club.",
+
+    "sectionThreeTitle" : "JOIN ON BOARD",
+    "sectionThreeH1" : "Roadmap",
+    "sectionThreeH1Text1" : "Section Under Construction",
+    "sectionThreeH2" : "Purchase",
+    "sectionThreeH2Text1" : "Connect your wallet below and proceed to purchase shares of the Magellano 25",
+    "sectionThreeH2Text2" : "Once purchased, it will be your access key to the yacht, the services, the club, the events and much more. Connect to the website upon terminating your purchase, to access the digital space where you can make reservations and handle your pirvate cruises"
+}

@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import Experience from "../Experience.js";
 import GSAP from "gsap";
-import { RectAreaLightHelper } from "three/examples/jsm/helpers/RectAreaLightHelper.js";
+import iOSDetector from "../Utils/detector.js"
 
 export default class Room {
     constructor() {
@@ -22,6 +22,7 @@ export default class Room {
         this.setModel();
         this.setAnimation();
         this.onMouseMove();
+        this.onGyroDetected();
     }
 
     setModel() {
@@ -120,6 +121,112 @@ export default class Room {
                 ((e.clientX - window.innerWidth / 2) * 8) / window.innerWidth; //*2 standard
             this.lerp.target = this.rotation * 0.15; //*0.05 standard
         });
+    }
+
+     // GYROSCOPE AND HELPER FUNCTIONS
+     onGyroDetected() {
+        if (window.DeviceOrientationEvent) {
+            this.gyroDeviceOrientationSetup();
+        }
+        else if (window.DeviceMotionEvent) {
+            this.gyroDeviceMotionSetup();
+        }
+    }
+
+
+    gyroDeviceOrientationSetup() {
+        var isIos = iOSDetector();
+        if (this.experience.sizes.device == 'mobile' && isIos) {
+
+            if (location.protocol != "https:") {
+                location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+            }
+            var button = document.getElementById("perloaderMusic");
+            var button2 = document.getElementById("preloaderNoMusic");
+            var instanceThis = this;
+            button.addEventListener("click", function () { instanceThis.askGyroPermission(instanceThis, "deviceorientation"); });
+            button2.addEventListener("click", function () { instanceThis.askGyroPermission(instanceThis, "deviceorientation"); });
+        }
+        else {
+            window.addEventListener("deviceorientation", (e) => {
+                this.tilt(e);
+            });
+        }
+    }
+
+    gyroDeviceMotionSetup() {
+        var isIos = iOSDetector();
+        if (this.experience.sizes.device == 'mobile' && isIos) {
+
+            if (location.protocol != "https:") {
+                location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+            }
+
+            var button = document.getElementById("perloaderMusic");
+            var button2 = document.getElementById("preloaderNoMusic");
+            var instanceThis = this;
+            button.addEventListener("click", function () { instanceThis.askGyroPermission(instanceThis, "devicemotion"); });
+            button2.addEventListener("click", function () { instanceThis.askGyroPermission(instanceThis, "devicemotion"); });
+        }
+        else {
+            window.addEventListener("devicemotion", (e) => {
+                this.tilt(e);
+            });
+        }
+    }
+
+    askGyroPermission(scope, eventType) {
+        if (eventType == "deviceorientation") {
+            if (typeof (window.DeviceOrientationEvent) !== "undefined" && typeof (window.DeviceOrientationEvent.requestPermission) === "function") {
+                window.DeviceOrientationEvent.requestPermission()
+                    .then(response => {
+                        if (response == "granted") {
+                            scope.addTiltOrientationEventListener();
+                        }
+                    })
+                    .catch(console.error)
+            } else {
+                alert("DeviceMotionEvent is not defined");
+            }
+        }
+
+        else if (eventType == "devicemotion") {
+            if (typeof (window.DeviceMotionEvent) !== "undefined" && typeof (window.DeviceMotionEvent.requestPermission) === "function") {
+                window.DeviceMotionEvent.requestPermission()
+                    .then(response => {
+                        if (response == "granted") {
+                            scope.addTiltMotionEventListener();
+                        }
+                    })
+                    .catch(console.error)
+            } else {
+                alert("DeviceMotionEvent is not defined");
+            }
+        }
+    }
+
+    addTiltOrientationEventListener() {
+        window.addEventListener("deviceorientation", (e) => {
+            this.tilt(e);
+        })
+    }
+
+    addTiltMotionEventListener() {
+        window.addEventListener("devicemotion", (e) => {
+            this.tilt(e);
+        })
+    }
+
+    tilt(e) {
+        try {
+            let x = e.gamma;
+            let slope = 8 / 100;
+            this.rotation = (-4) + (slope * (x - -100));
+            this.lerp.target = this.rotation * 0.055;
+        }
+        catch {
+            console.log("big crash");
+        }
     }
 
     
